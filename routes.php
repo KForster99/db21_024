@@ -1,3 +1,7 @@
+<html>
+<head></head>
+    <body>
+
 <?php
 $controllers = array('pages'=>['home','error']);
 $controller = $_POST["controller"];
@@ -21,3 +25,6 @@ else{
     call('pages','error');
 }
 ?>
+
+</body>   
+</html>
