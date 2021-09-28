@@ -1,7 +1,6 @@
 <?php
 $controllers = array('pages'=>['home','error']);
-$controller = $_POST["controller"];
-$action = $_POST["action"];
+
 echo "routes to ".$controller."-".$action."<br>";
 function call($controller,$action){
     echo "routes to ".$controller."-".$action."<br>";
