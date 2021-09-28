@@ -14,12 +14,14 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     <body>
     <?php echo "controller = ".$controller.", action = ".$action.;?>
     <br>[<a href="">Home </a>] <br>
-    <?php require_once("routes.php"); ?>
-    
     <form method="POST" action = "index.php">
     <input type="text" name="controller" value= $controller/>
     <input type="text" name="action" value= $action/>
     </form>
+    
+    <?php require_once("routes.php"); ?>
+    
+    
    
 
 </body>   
