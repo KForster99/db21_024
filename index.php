@@ -16,8 +16,8 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     <br>[<a href="">Home </a>] <br>
 
     <form method="POST" action = "routes.php">
-    <input type="text" name="controller" value= $controller/>
-    <input type="text" name="action" value= $action/>
+    <input type="" name="controller" value= $controller/>
+    <input type="" name="action" value= $action/>
     </form>
 
     <?php require_once("routes.php"); ?>
