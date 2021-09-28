@@ -16,17 +16,12 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     <br>[<a href="">Home </a>] <br>
     <?php require_once("routes.php"); ?>
     
-    
+    <form method="POST" action-"index.php">
+    <input type="text" name="controller" value= $controller/>
+    <input type="text" name="action" value= $action/>
+    </form>
    
 
 </body>   
 </html>
 
-<html>
-   <body>
-<form method="POST" action-"index.php">
-    <input type="text" name="controller" value= $controller/>
-    <input type="text" name="action" value= $action/>
-    </form>
-    </body>
-</html>
