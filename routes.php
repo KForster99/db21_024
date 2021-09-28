@@ -2,7 +2,7 @@
 $controllers = array('pages'=>['home','error']);
 $controller = $_POST["controller"];
 $action = $_POST["action"];
-function call($controllers,$action){
+function call($controller,$action){
     echo "routes to ".$controller."-".$action."<br>";
 }
 
@@ -15,5 +15,8 @@ if(array_key_exists($controller,$controllers)){
     {
         call('pages','error');
     }
+}
+else{
+    call('pages','error');
 }
 ?>
