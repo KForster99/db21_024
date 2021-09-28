@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_GET['controller'])&&isset($_GET['action']))
 {
     $controller = $_GET['controller'];
@@ -12,7 +13,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 <html>
 <head></head>
     <body>
-    <?php echo "controller = ".$controller.", action = ".$action.;?>
+    <?php echo "controller = ".$controller.", action = ".$action;?>
     <br>[<a href="">Home </a>] <br>
 
     <form method="POST" action = "routes.php">
@@ -20,7 +21,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     <input type="" name="action" value= $action/>
     </form>
 
-    <?php require_once("routes.php"); ?>
+    <?php require_once("./routes.php"); ?>
     
     
    
