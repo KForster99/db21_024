@@ -14,8 +14,8 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     <body>
     <?php echo "controller = ".$controller.", action = ".$action.;?>
     <br>[<a href="">Home </a>] <br>
-    
-    <form method="POST" action = "index.php">
+
+    <form method="POST" action = "routes.php">
     <input type="text" name="controller" value= $controller/>
     <input type="text" name="action" value= $action/>
     </form>
