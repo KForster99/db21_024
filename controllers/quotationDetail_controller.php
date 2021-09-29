@@ -2,8 +2,8 @@
     class QuotationDetailController{
         public function index()
         {
-            $quotation_list = QuotationDetail::getAll();
-            require_once("./views/quotation/index_quotation.php");
+            $quotationDetail_list = QuotationDetail::getAll();
+            require_once("./views/quotation_detail/index_quotation_detail.php");
         }
         // public function newQuotation()
         // {
