@@ -1,5 +1,8 @@
 <?php
-$controllers = array('pages'=>['home','error'],'quotation'=>['index','newQuotation'],'quotationDetail'=>['index','newQuotationDetail','addQuotationDetail']);
+$controllers = array('pages'=>['home','error'],
+                    'quotation'=>['index','newQuotation'],
+                    'quotationDetail'=>['index','newQuotationDetail','addQuotationDetail'],
+                    'productRate'=>['index']);
 
 function call($controller,$action){
     require_once("./controllers/".$controller."_controller.php");
