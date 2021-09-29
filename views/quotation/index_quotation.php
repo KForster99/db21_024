@@ -12,7 +12,7 @@ new quotation<a href="?controller=quotation&action=newQuotation"> click </a><br>
 </tr>
 <?php foreach($quotation_list as $quotation){
     echo "<tr> 
-    <td>$quotation->id</td>
+    <td>$quotation->Q_ID</td>
     <td>$quotation->date</td> 
     <td>$quotation->cusName</td>
     <td>$quotation->cusAddress</td>

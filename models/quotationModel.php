@@ -1,16 +1,20 @@
 <?php
 class Quotation
 {
-    public $id;
+    public $Q_ID;
+    public $C_ID;
+    public $E_ID;
     public $date;
     public $cusName;
     public $cusAddress;
     public $cusPhone;
     public $empName;
 
-    public function __construct($id, $date, $cusName, $cusAddress, $cusPhone, $empName)
+    public function __construct($Q_ID,$C_ID,$E_ID,$date, $cusName, $cusAddress, $cusPhone, $empName)
     {
-        $this->id = $id;
+        $this->Q_ID = $Q_ID;
+        $this->C_ID = $C_ID;
+        $this->E_ID = $E_ID;
         $this->date = $date;
         $this->cusName = $cusName;
         $this->cusAddress = $cusAddress;
@@ -34,13 +38,15 @@ class Quotation
         $sql = "select * from quotation,employee,customer where quotation.E_Sale = employee.E_ID and quotation.C_ID = customer.C_ID";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
-            $id = $my_row[Q_ID];
+            $Q_ID = $my_row[Q_ID];
+            $C_ID = $my_row[C_ID];
+            $E_ID = $my_row[E_ID];
             $date = $my_row[Q_Date];
             $cusName = $my_row[C_Name];
             $cusAddress = $my_row[C_Address];
             $cusPhone = $my_row[C_Phone];
             $empName = $my_row[E_Name];
-            $quotationList[] = new Quotation($id, $date, $cusName, $cusAddress, $cusPhone, $empName);
+            $quotationList[] = new Quotation($Q_ID,$C_ID,$E_ID, $date, $cusName, $cusAddress, $cusPhone, $empName);
         }
         require("connection_close.php");
         return $quotationList;
