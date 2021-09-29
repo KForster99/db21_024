@@ -1,15 +1,16 @@
 <?php
 class Product
 {
-    public $id, $name;
+    public $proID, $proName;
 
-    public function _construct($id, $name)
+    public function _construct($proID, $proName)
     {
-        $this->id = $id;
-        $this->name = $name;
+        $this->proID = $proID;
+        $this->proName = $proName;
     }
     public static function getAll()
     {
+        echo "getAll";
         $productList = [];
         require("connection_connect.php");
         $sql = "select * from product";

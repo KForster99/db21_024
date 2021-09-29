@@ -3,10 +3,10 @@
 
 <label>ProductID <select name="proID">
 <?php foreach($product_list as $pro){
-        echo "<option value= $pro->id>
-        $pro->name</option>";}?>
+        echo "<option value = $pro->proID>
+        $pro->proName</option>";}?>
 
-
+</select></label>
 <br><label>Color<input type="text" name="PColor"/> </label><br>
 <label>Unit<input type="text" name="Unit"/> </label><br>
 <label>Unit Price<input type="text" name="UnitPrice"/> </label><br>
