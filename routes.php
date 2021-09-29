@@ -13,7 +13,8 @@ function call($controller,$action){
                            $controller = new QuotationController();
                            break;
 
-        case "quotation_detail" : $controller = new QuotationDetailController();
+        case "quotation_detail" :   require_once("./models/quotationDetailModel.php")
+                                    $controller = new QuotationDetailController();
                                     break;
 
     }$controller->{$action}();
