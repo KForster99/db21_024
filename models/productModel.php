@@ -19,7 +19,7 @@ class Product
             $proName = $my_row[P_Name];
             echo "show id = ".$proID;
             echo "show name = ".$proName;
-            $productList[] = new Customer($proID, $proName);
+            $productList[] = new Product($proID, $proName);
         }
         require("connection_close.php");
         return $productList;
