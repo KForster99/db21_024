@@ -32,7 +32,7 @@ class Quotation
               $id = $my_row[Q_ID]; 
               $cusName = $my_row[C_Name]; 
               $empName = $my_row[E_Name]; 
-              $quotationList[] = new Quotation($id, $cusName,$empName);
+              $quotationList[] = new Quotation($id,$cusName,$empName);
         }
         require("connection_close.php");
         return $quotationList;
