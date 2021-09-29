@@ -11,4 +11,3 @@
     else{
         echo "Successfully connected to database <br>";
     }
-?>
