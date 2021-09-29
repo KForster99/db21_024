@@ -36,19 +36,12 @@ class QuotationDetail
         $quotationDetailList = [];
         require("connection_connect.php");
         $sql = "select quotation_detail.Q_ID, product_color.P_ID, product_color.PC_Color, quotation_detail.QD_Quantity , ( MIN(product_rate.PR_Price) + MIN(product_rate.PR_ScreenPrice) * (quotation_detail.QD_ScreenQty-1) ) AS Price, ( ( ( MIN(product_rate.PR_Price) + MIN(product_rate.PR_ScreenPrice) * (quotation_detail.QD_ScreenQty-1) ) ) * quotation_detail.QD_Quantity) AS Total FROM product_rate
-
         NATURAL JOIN product
-        
-        NATURAL JOIN product_color
-        
-        NATURAL JOIN quotation_detail
-        
-        WHERE product_rate.PR_QtyMoreThan < quotation_detail.QD_Quantity
-        
-        GROUP BY product_rate.P_ID, quotation_detail.QD_ID
-        
-        ORDER by quotation_detail.QD_ID
-        ";
+        NATURAL JOIN product_color  
+        NATURAL JOIN quotation_detail   
+        WHERE product_rate.PR_QtyMoreThan < quotation_detail.QD_Quantity   
+        GROUP BY product_rate.P_ID, quotation_detail.QD_ID    
+        ORDER by quotation_detail.QD_ID";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
             $Qid = $my_row[Q_ID];
