@@ -43,10 +43,10 @@ class ProductRate
             $Price = $my_row[PR_Price];
             $ScreenPrice = $my_row[PR_ScreenPrice];
 
-            $quotationDetailList[] = new ProductRate($ID ,$P_ID ,$P_Name ,$QtyMorethan ,$Price ,$ScreenPrice);
+            $productRateList[] = new ProductRate($ID ,$P_ID ,$P_Name ,$QtyMorethan ,$Price ,$ScreenPrice);
         }
         require("connection_close.php");
-        return $quotationDetailList;
+        return $productRateList;
     }
     // public static function search()
     // {
