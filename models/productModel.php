@@ -1,7 +1,8 @@
 <?php
 class Product
 {
-    public $proID, $proName;
+    public $proID;
+    public $proName;
 
     public function __construct($proID, $proName)
     {
