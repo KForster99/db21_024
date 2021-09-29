@@ -1,5 +1,5 @@
 <?php
-$controllers = array('pages'=>['home','error'],'quotation'=>['index','newQuotation']);
+$controllers = array('pages'=>['home','error'],'quotation'=>['index','newQuotation'],'quotation_detail'=>['index']);
 
 function call($controller,$action){
     require_once("./controllers/".$controller."_controller.php");
@@ -12,6 +12,9 @@ function call($controller,$action){
                            require_once("./models/employeeModel.php");
                            $controller = new QuotationController();
                            break;
+
+        case "quotation_detail" : $controller = new QuotationDetailController();
+                                    break;
 
     }$controller->{$action}();
 }
