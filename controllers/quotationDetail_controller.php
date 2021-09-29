@@ -7,8 +7,8 @@
         }
         public function newQuotationDetail()
         {
-            $quotation_list = QuotationDetail::getAll();
-            require_once("./views/quotation/newQuotation.php");
+            $quotationDetail_list = QuotationDetail::getAll();
+            require_once("./views/quotationDetail/newQuotationDetail.php");
         }
     }
 ?>
