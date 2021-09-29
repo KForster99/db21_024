@@ -1,11 +1,16 @@
 <?php
-$controllers = array('pages'=>['home','error']);
+$controllers = array('pages'=>['home','error'],'quotation'=>['index']);
 
 function call($controller,$action){
     require_once("./controllers/".$controller."_controller.php");
     switch($controller){
         case "pages": $controller = new PagesController();
                       break;
+        
+        case "quotation" : require_once("./models/quotationModel.php");
+                            $controller = new QuotationController();
+                            break;
+
     }$controller->{$action}();
 }
 
