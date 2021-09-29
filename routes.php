@@ -20,8 +20,8 @@ function call($controller,$action){
                                     break;
 
         case "productRate" :    require_once("./models/productRateModel.php");
-                                    $controller = new ProductRateController();
-                                    break;
+                                $controller = new ProductRateController();
+                                break;
 
     }$controller->{$action}();
 }
