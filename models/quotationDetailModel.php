@@ -10,11 +10,11 @@ class QuotationDetail
     public $Total;
 
 
-    public function __construct($Qid, $Pid, $Pcolor,$Unit, $UnitPrice,$Total)
+    public function __construct($Qid, $Pid,$Pname, $Pcolor,$Unit, $UnitPrice,$Total)
     {
         $this->Qid = $Qid;
         $this->Pid = $Pid;
-        //$this->Pname = $Pname;
+        $this->Pname = $Pname;
         $this->Pcolor = $Pcolor;
         $this->Unit = $Unit;
         $this->UnitPrice = $UnitPrice;
@@ -35,18 +35,18 @@ class QuotationDetail
     {
         $quotationDetailList = [];
         require("connection_connect.php");
-        $sql = "select * from Q09";
+        $sql = "select * from Q09,product WHERE product.P_ID = Q09.P_ID";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
             $Qid = $my_row[Q_ID];
             $Pid = $my_row[P_ID];
-            //$Pname = $my_row[P_Name];
+            $Pname = $my_row[P_Name];
             $Pcolor = $my_row[PC_Color];
             $Unit = $my_row[QD_Quantity];
             $UnitPrice = $my_row[Price];
             $Total = $my_row[Total];
 
-            $quotationDetailList[] = new QuotationDetail($Qid, $Pid, $Pcolor,$Unit,$UnitPrice,$Total);
+            $quotationDetailList[] = new QuotationDetail($Qid, $Pid, $Pname,$Pcolor,$Unit,$UnitPrice,$Total);
         }
         require("connection_close.php");
         return $quotationDetailList;

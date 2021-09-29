@@ -8,7 +8,11 @@
 
         public function newQuotationDetail()
         {
+            echo "new1";
             $product_list = ProductColor::getAll();
+            echo "new2";
+            $quotation_list = Quotation::getAll();
+            echo "new3";
             require_once("./views/quotationDetail/newQuotationDetail.php");
         }
 
