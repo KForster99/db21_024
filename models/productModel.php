@@ -17,6 +17,8 @@ class Product
         while ($my_row = $result->fetch_assoc()) {
             $proID = $my_row[P_ID];
             $proName = $my_row[P_Name];
+            echo "show id = ".$proID;
+            echo "show name = ".$proName;
             $customerList[] = new Customer($proID, $proName);
         }
         require("connection_close.php");
