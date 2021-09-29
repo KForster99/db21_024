@@ -15,8 +15,8 @@ class Product
         $sql = "select * from product";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
-            $proID = $my_row[C_ID];
-            $proName = $my_row[C_Name];
+            $proID = $my_row[P_ID];
+            $proName = $my_row[P_Name];
             $customerList[] = new Customer($proID, $proName);
         }
         require("connection_close.php");

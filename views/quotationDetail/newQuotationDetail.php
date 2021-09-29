@@ -7,7 +7,7 @@
         $pro->name</option>";}?>
 
 
-<br><label>Color<input type="text" name="Color"/> </label><br>
+<br><label>Color<input type="text" name="PColor"/> </label><br>
 <label>Unit<input type="text" name="Unit"/> </label><br>
 <label>Unit Price<input type="text" name="UnitPrice"/> </label><br>
 <label>Amount<input type="text" name="Amount"/> </label><br>
