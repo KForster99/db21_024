@@ -1,15 +1,25 @@
 <?php
 class QuotationDetail
 {
-    public $id;
-    public $cusName;
-    public $empName;
+    public $Qid;
+    public $Pid;
+    public $Pname;
+    public $Pcolor;
+    public $Unit;
+    public $UnitPrice;
+    public $Total;
 
-    public function __construct($id, $cusName, $empName)
+
+    public function __construct($Qid, $Pid, $Pcolor,$Unit, $UnitPrice,$Total)
     {
-        $this->id = $id;
-        $this->cusName = $cusName;
-        $this->empName = $empName;
+        $this->Qid = $Qid;
+        $this->Pid = $Pid;
+        //$this->Pname = $Pname;
+        $this->Pcolor = $Pcolor;
+        $this->Unit = $Unit;
+        $this->UnitPrice = $UnitPrice;
+        $this->Total = $Total;
+
     }
     // public static function get()
     // {
@@ -25,13 +35,18 @@ class QuotationDetail
     {
         $quotationDetailList = [];
         require("connection_connect.php");
-        $sql = "select * from quotation,employee,customer where quotation.E_Sale = employee.E_ID and quotation.C_ID = customer.C_ID";
+        $sql = "select * from Q9";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
-            $id = $my_row[Q_ID];
-            $cusName = $my_row[C_Name];
-            $empName = $my_row[E_Name];
-            $quotationDetailList[] = new QuotationDetail($id, $cusName, $empName);
+            $Qid = $my_row[Q_ID];
+            $Pid = $my_row[P_ID];
+            //$Pname = $my_row[P_Name];
+            $Pcolor = $my_row[PC_Color];
+            $Unit = $my_row[QD_Quantity];
+            $UnitPrice = $my_row[Price];
+            $Total = $my_row[Total];
+
+            $quotationDetailList[] = new QuotationDetail($Qid, $Pid, $Pcolor,$Unit,$UnitPrice,$Total);
         }
         require("connection_close.php");
         return $quotationDetailList;
