@@ -1,5 +1,5 @@
 <table border = 1>
-new QuotationDetail <a href=?controller=quotation&action=newQuotationDetail> click </a> <br>
+new QuotationDetail <a href=?controller=quotationDetail&action=newQuotationDetail> click </a> <br>
 <tr> <td>QID</td><td>PID</td><td>PColor</td>
 <td>Unit</td><td>Unit Price</td><td>Amount</td>
 
