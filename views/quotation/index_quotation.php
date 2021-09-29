@@ -3,7 +3,7 @@
 <tr> <td>ID</td><td>CusName</td><td>EmpName</td>
 <td>update</td><td>delete</td> </tr>
 <?php foreach($quotation_list as $quotation){
-    echo "<tr> <td>$student->id</td>
+    echo "<tr> <td>$quotation->id</td>
     <td>$quotation->cusName</td>  
     <td>$quotation->empName</td> 
     <td> update</td>
