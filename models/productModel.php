@@ -10,7 +10,7 @@ class Product
     }
     public static function getAll()
     {
-        $customerList = [];
+        $productList = [];
         require("connection_connect.php");
         $sql = "select * from product";
         $result = $conn->query($sql);
@@ -19,9 +19,9 @@ class Product
             $proName = $my_row[P_Name];
             echo "show id = ".$proID;
             echo "show name = ".$proName;
-            $customerList[] = new Customer($proID, $proName);
+            $productList[] = new Customer($proID, $proName);
         }
         require("connection_close.php");
-        return $customerList;
+        return $productList;
     }
 }
