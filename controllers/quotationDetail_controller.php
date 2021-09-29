@@ -5,10 +5,10 @@
             $quotationDetail_list = QuotationDetail::getAll();
             require_once("./views/quotationDetail/index_quotationDetail.php");
         }
-        // public function newQuotation()
-        // {
-        //     $quotation_list = Quotation::getAll();
-        //     require_once("./views/quotation/index_quotation.php");
-        // }
+        public function newQuotationDetail()
+        {
+            $quotation_list = QuotationDetail::getAll();
+            require_once("./views/quotation/newQuotation.php");
+        }
     }
 ?>
