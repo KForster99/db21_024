@@ -14,7 +14,7 @@ function call($controller,$action){
                            break;
 
         case "quotationDetail" :    require_once("./models/quotationDetailModel.php");
-                                    require_once("./models/customerModel.php");
+                                    require_once("./models/productModel.php");
                                     $controller = new QuotationDetailController();
                                     break;
 
