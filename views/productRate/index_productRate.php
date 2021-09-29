@@ -13,7 +13,6 @@
     <td> $productRate->P_ID </td> 
     <td> $productRate->P_Name </td>
     <td> $productRate->QtyMorethan </td>
-    <td> $productRate->cusAddress </td>
     <td> $productRate->Price </td> 
     <td> $productRate->ScreenPrice </td> 
     <td> update </td>
