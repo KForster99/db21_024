@@ -35,7 +35,7 @@ class QuotationDetail
     {
         $quotationDetailList = [];
         require("connection_connect.php");
-        $sql = "select * from Q9";
+        $sql = "select * from 'Q9'";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
             $Qid = $my_row[Q_ID];
