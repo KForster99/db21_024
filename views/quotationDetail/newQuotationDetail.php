@@ -1,16 +1,19 @@
 <form method="get" action="">
-<label>QuotationID<input type="text" name="QID"/> </label><br>
 
-<label>ProductID <select name="proID">
-<?php foreach($product_list as $pro){
-        echo "<option value = $pro->proID>
-        $pro->proName</option>";}?>
-
+<label>QuotationID <select name="QID">
+<?php foreach($quotationDetail_list as $quotationDetail){
+        echo "<option value = $quotationDetail->Qid>
+        $pquotationDetail->Qid</option>";}?>
 </select></label>
-<br><label>Color<input type="text" name="PColor"/> </label><br>
+
+<label>ProductID <select name="procID">
+<?php foreach($product_list as $pro){
+        echo "<option value = $pro->procID>
+        $pro->proName $pro->color</option>";}?>
+</select></label>
+
 <label>Unit<input type="text" name="Unit"/> </label><br>
-<label>Unit Price<input type="text" name="UnitPrice"/> </label><br>
-<label>Amount<input type="text" name="Amount"/> </label><br>
+
 
 <input type="hidden" name="controller" value="quotationDetail"/>
 <button type="submit" name="action" value="index"> Back</button>

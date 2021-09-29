@@ -8,7 +8,9 @@
 
         public function newQuotationDetail()
         {
-            $product_list = Product::getAll();
+            $product_list = ProductColor::getAll();
+            $quotationDetail_list = QuotationDetail::getAll();
+            echo $quotationDetail_list;
             require_once("./views/quotationDetail/newQuotationDetail.php");
         }
 

@@ -1,28 +1,30 @@
 <?php
-class Product
+class ProductColor
 {
-    public $proID, $proName;
+    public $procID, $proName ,$color;
 
-    public function __construct($proID, $proName)
+    public function __construct($procID, $proName, $color)
     {
-        $this->proID = $proID;
+        $this->procID = $procID;
         $this->proName = $proName;
-        echo $proID;
-        echo $proName;
+        $this->color = $color;
+        // echo $proID;
+        // echo $proName;
     }
     public static function getAll()
     {
         echo "getAll";
         $productList = [];
         require("connection_connect.php");
-        $sql = "select * from product";
+        $sql = "select * from product,product_color WHERE product.P_ID = product_color.P_ID";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
-            $proID = $my_row[P_ID];
+            $procID = $my_row[PC_ID];
             $proName = $my_row[P_Name];
+            $color = $my_row[PC_Color];
             // echo "show id = ".$proID;
             // echo "show name = ".$proName;
-            $productList[] = new Product($proID, $proName);
+            $productList[] = new ProductColor($procID, $proName,$color);
         }
         require("connection_close.php");
         return $productList;
