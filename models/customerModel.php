@@ -13,7 +13,7 @@ public static function getAll()
         require("connection_connect.php");
         $sql = "select * from customer";
         $result = $conn->query($sql);
-        while($my_row == $result->fetch_assoc()){
+        while($my_row = $result->fetch_assoc()){
             $cusID = $my_row[C_ID];
             $cusName = $my_row[C_Name];
             $customerList[] = new Customer($cusID,$cusName);
