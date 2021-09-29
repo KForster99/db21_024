@@ -32,10 +32,10 @@ class ProductRate
     public static function getAll()
     {
         $quotationDetailList = [];
-        require("connection_connect.php");
+        require( "connection_connect.php" );
         $sql = "select * from product,product_rate where product.P_ID = product_rate.P_ID";
         $result = $conn->query($sql);
-        while ($my_row = $result->fetch_assoc()) {
+        while ( $my_row = $result->fetch_assoc() ) {
             $ID = $my_row[PR_ID];
             $P_ID = $my_row[P_ID];
             $P_Name = $my_row[P_Name];
