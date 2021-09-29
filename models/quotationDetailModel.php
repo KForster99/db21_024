@@ -68,14 +68,14 @@ class QuotationDetail
     //     require("connection_close.php");
     //     return ;
     // }
-    // public static function add()
-    // {
-    //     require("connection_connect.php");
-    //     $sql = "";
-    //     $result = $conn->query($sql);
-    //     require("connection_close.php");
-    //     return ;
-    // }
+    public static function Add($QID,$PID,$Color,$Unit,$UnitPrice,$Amount)
+    {
+        require("connection_connect.php");
+        $sql = "";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        return ;
+    }
     // public static function update()
     // {
     //     require("connection_connect.php");
