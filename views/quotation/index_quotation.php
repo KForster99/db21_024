@@ -4,8 +4,8 @@
 <td>update</td><td>delete</td> </tr>
 <?php foreach($quotation_list as $quotation){
     echo "<tr> 
-    <td>$quotatio->id</td>
-    <td>$quotationt->cusName</td>  
+    <td>$quotation->id</td>
+    <td>$quotation->cusName</td>  
     <td>$quotation->empName</td> 
     <td> update</td>
     <td>delete</td> </tr>"; }

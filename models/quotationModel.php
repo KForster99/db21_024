@@ -5,7 +5,7 @@ class Quotation
     public $cusName;
     public $empName;
 
-    public function _construct($id,$cusName,$empName)
+    public function __construct($id,$cusName,$empName)
     {
         $this->id = $id;
         $this->cusName = $cusName;
