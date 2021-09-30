@@ -48,17 +48,17 @@
             return $productRateList;
         }
 
-        // public static function search()
-        // {
-        //     require("connection_connect.php");
-        //     $sql = "";
-        //     $result = $conn->query($sql);
-        //     while ($my_row = $result->fetch_assoc()) {
+        public static function search($key)
+        {
+            require("connection_connect.php");
+            $sql = "SELECT * FROM product,product_rate WHERE product.P_ID = product_rate.P_ID AND ( product.P_ID LIKE '$key' OR product.P_Name LIKE '$key')";
+            $result = $conn->query($sql);
+            while ($my_row = $result->fetch_assoc()) {
 
-        //     }
-        //     require("connection_close.php");
-        //     return ;
-        // }
+            }
+            require("connection_close.php");
+            return ;
+        }
 
         public static function Add($ID, $P_ID, $QtyMoreThan, $Price, $ScreenPrice)
         {
