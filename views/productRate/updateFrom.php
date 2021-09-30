@@ -1,6 +1,7 @@
 <form method="get" action="">
 
-<?php echo $productRate->ID;
+<?php echo "Test";
+echo $productRate->ID;
 echo $productRate->P_ID;
 echo $productRate->P_Name;
 echo $productRate->QtyMorethan;
