@@ -2,8 +2,8 @@
 
     class Product{
 
-        public $proID;
-        public $proName;
+        public $ID;
+        public $Name;
 
         public function __construct($ID, $Name){
             $this->ID = $ID;
