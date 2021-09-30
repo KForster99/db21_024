@@ -12,7 +12,7 @@
 <label>ราคาสกรีน <input type="text" name="ScreenPrice" value="<?php echo $productRate->ScreenPrice; ?>"/> </label><br>
 
 <input type="hidden" name="controller" value="productRate"/>
-<input type="hidden" name="ID" value="<?php echo $product->ID; ?>"/>
+<input type="hidden" name="ID" value="<?php echo $productRate->ID; ?>"/>
 <button type="submit" name="action" value="index"> Back</button>
 <button type="submit" name="action" value="addProductRate"> Save</button>
 
