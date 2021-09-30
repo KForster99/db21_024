@@ -11,7 +11,7 @@
         }
 
         public static function getAll(){
-            $productRateList = [];
+            $productList = [];
             require( "connection_connect.php" );
             $sql = "select * from product";
             $result = $conn->query($sql);
@@ -21,7 +21,7 @@
                 $productRateList[] = new ProductRate($ID ,$Name);
             }
             require("connection_close.php");
-            return $productRateList;
+            return $productList;
         }
 
     }
