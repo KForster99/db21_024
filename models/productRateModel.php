@@ -21,7 +21,7 @@
         public static function get($ID){
             $productRateList = [];
             require("connection_connect.php");
-            $sql = "SELECT * FROM product,product_rate WHERE product.P_ID = product_rate.P_ID AND product_rate.PR_ID = '$ID'";
+            $sql = "SELECT * FROM product,product_rate WHERE product.P_ID = product_rate.P_ID AND product_rate.PR_ID = '$ID' ORDER BY product_rate.PR_ID";
             $result = $conn->query($sql);
             while ($my_row = $result->fetch_assoc()) {
                 $ID = $my_row[PR_ID];
@@ -40,7 +40,7 @@
         public static function getAll(){
             $productRateList = [];
             require("connection_connect.php");
-            $sql = "SELECT * FROM product,product_rate WHERE product.P_ID = product_rate.P_ID";
+            $sql = "SELECT * FROM product,product_rate WHERE product.P_ID = product_rate.P_ID ORDER BY product_rate.PR_ID";
             $result = $conn->query($sql);
             while ($my_row = $result->fetch_assoc()) {
                 $ID = $my_row[PR_ID];
@@ -60,7 +60,7 @@
         {
             $productRateList = [];
             require("connection_connect.php");
-            $sql = "SELECT * FROM product,product_rate WHERE product.P_ID = product_rate.P_ID AND ( product.P_ID LIKE '%$key%' OR product.P_Name LIKE '%$key%')";
+            $sql = "SELECT * FROM product,product_rate WHERE product.P_ID = product_rate.P_ID AND ( product.P_ID LIKE '%$key%' OR product.P_Name LIKE '%$key%') ORDER BY product_rate.PR_ID";
             $result = $conn->query($sql);
             while ($my_row = $result->fetch_assoc()) {  
                 $ID = $my_row[PR_ID];
