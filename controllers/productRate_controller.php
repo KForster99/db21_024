@@ -21,7 +21,7 @@
 
             ProductRate::Add($ID, $P_ID, $QtyMoreThan ,$Price ,$ScreenPrice);
 
-            QuotationDetailController::index();
+            ProductRateController::index();
         }
 
     }
