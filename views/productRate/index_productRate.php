@@ -24,7 +24,7 @@
         <td> $productRate->QtyMorethan </td>
         <td> $productRate->Price </td> 
         <td> $productRate->ScreenPrice </td> 
-        <td> <a href=?controller=productRate&action=updateForm> update </a> </td>
+        <td> <a href=?controller=productRate&action=updateForm&ID=$productRate->ID> update </a> </td>
         <td> delete </td> </tr>"; 
     }
 
