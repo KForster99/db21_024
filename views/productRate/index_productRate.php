@@ -19,12 +19,12 @@
     </tr>
     <?php foreach( $productRate_list as $productRate ) {
         echo "<tr>
-        <td> $productRate->P_ID </td> 
+        <td> $productRate->P_ID </td>
         <td> $productRate->P_Name </td>
         <td> $productRate->QtyMorethan </td>
         <td> $productRate->Price </td> 
         <td> $productRate->ScreenPrice </td> 
-        <td> update </td>
+        <td> <a href=?controller=productRate&action=updateForm> update </a> </td>
         <td> delete </td> </tr>"; 
     }
 
