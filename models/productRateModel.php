@@ -42,7 +42,7 @@
                 $Price = $my_row[PR_Price];
                 $ScreenPrice = $my_row[PR_ScreenPrice];
 
-                $productRateList[] = new ProductRate($ID ,$P_ID ,$P_Name ,$QtyMoreThan ,$Price ,$ScreenPrice);
+                $productRateList[] = new ProductRate($ID, $P_ID, $P_Name, $QtyMoreThan, $Price, $ScreenPrice);
             }
             require("connection_close.php");
             return $productRateList;
@@ -60,14 +60,14 @@
         //     return ;
         // }
 
-        // public static function Add($ID, $P_ID, $QtyMoreThan ,$Price ,$ScreenPrice)
-        // {
-        //     require("connection_connect.php");
-        //     $sql = "insert into `product_rate` (`PR_ID`, `PR_QtyMoreThan`, `PR_Price`, `PR_ScreenPrice`, `P_ID`) VALUES ('PR001_R000', '112', '12', '12', 'PR001')";
-        //     $result = $conn->query($sql);
-        //     require("connection_close.php");
-        //     return ;
-        // }
+        public static function Add($ID, $P_ID, $QtyMoreThan, $Price, $ScreenPrice)
+        {
+            require("connection_connect.php");
+            $sql = "INSERT INTO product_rate (PR_ID, PR_QtyMoreThan, PR_Price, PR_ScreenPrice, P_ID) VALUES ('$ID', '$P_ID', '$QtyMoreThan', '$Price', '$ScreenPrice')";
+            $result = $conn->query($sql);
+            require("connection_close.php");
+            return ;
+        }
 
         // public static function update()
         // {
