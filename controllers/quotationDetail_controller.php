@@ -20,14 +20,12 @@
         {
             $QID = $_GET['QID'];
             $PID = $_GET['proID'];
-            $Color = $_GET['PColor'];
             $Unit = $_GET['Unit'];
-            $UnitPrice = $_GET['UnitPrice'];
-            $Amount = $_GET['Amount'];
             
-            echo $QID." ".$PID." ".$Color." ".$Unit." ".$UnitPrice." ".$Amount;
+            
+            echo $QID." ".$PID." ".$Unit;
 
-            QuotationDetail::Add($QID,$PID,$Color,$Unit,$UnitPrice,$Amount);
+            QuotationDetail::Add($QID,$PID,$Unit);
             QuotationDetailController::index();
 
         }
