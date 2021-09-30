@@ -65,10 +65,10 @@ class QuotationDetail
     //     require("connection_close.php");
     //     return ;
     // }
-    public static function Add($QID,$PID,$QtyScr,$Unit)
+    public static function Add($QDID,$QID,$procID,$QtyScr,$Unit)
     {
         require("connection_connect.php");
-        $sql = "";
+        $sql = "INSERT INTO `quotation_detail` (`QD_ID`, `QD_Quantity`, `QD_ScreenQty`, `PC_ID`, `Q_ID`) VALUES ('$QDID', '$Unit', '$QtyScr', '$procID', '$QID');";
         $result = $conn->query($sql);
         require("connection_close.php");
         return ;
