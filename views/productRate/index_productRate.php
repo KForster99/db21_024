@@ -1,5 +1,7 @@
 <table border = 1>
+
 new productRate<a href="?controller=productRate&action=newProductRate"> click </a><br>
+
 <tr>
 <td> P_ID </td>
 <td> P_Name </td>
