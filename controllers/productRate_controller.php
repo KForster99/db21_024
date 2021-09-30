@@ -69,6 +69,14 @@
             require_once("./views/productRate/deleteConfirm.php");
         }
 
+        public function delete(){
+            $ID = $_GET['ID'];
+
+            ProductRate::delete($ID);
+
+            ProductRateController::index();
+        }
+
     }
 
 ?>
