@@ -30,7 +30,7 @@
         // }
 
         public static function getAll(){
-            $quotationDetailList = [];
+            $productRateList = [];
             require( "connection_connect.php" );
             $sql = "select * from product,product_rate where product.P_ID = product_rate.P_ID";
             $result = $conn->query($sql);
