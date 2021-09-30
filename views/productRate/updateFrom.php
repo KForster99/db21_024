@@ -14,6 +14,6 @@
 <input type="hidden" name="controller" value="productRate"/>
 <input type="hidden" name="ID" value="<?php echo $productRate->ID; ?>"/>
 <button type="submit" name="action" value="index"> Back</button>
-<button type="submit" name="action" value="addProductRate"> Save</button>
+<button type="submit" name="action" value="update"> Save</button>
 
 </form>
