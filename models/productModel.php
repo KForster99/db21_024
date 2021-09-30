@@ -11,7 +11,6 @@
         }
 
         public static function getAll(){
-            echo "getAll";
             $productList = [];
             require("connection_connect.php");
             $sql = "select * from product";
