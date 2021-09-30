@@ -12,18 +12,15 @@
             require_once("./views/productRate/newProductRate.php");
         }
 
-        public function addQuotationDetail()
-        {
-            $QID = $_GET['QID'];
-            $PID = $_GET['proID'];
-            $Color = $_GET['PColor'];
-            $Unit = $_GET['Unit'];
-            $UnitPrice = $_GET['UnitPrice'];
-            $Amount = $_GET['Amount'];
-            
-            echo $QID." ".$PID." ".$Color." ".$Unit." ".$UnitPrice." ".$Amount;
+        public function addProductRate(){
+            $ID = $_GET['P_ID'];
+            $P_ID = $_GET['P_ID'];
+            $QtyMoreThan = $_GET['QtyMoreThan'];
+            $Price = $_GET['Price'];
+            $ScreenPrice = $_GET['ScreenPrice'];
 
-            QuotationDetail::Add($QID,$PID,$Color,$Unit,$UnitPrice,$Amount);
+            ProductRate::Add($ID, $P_ID, $QtyMoreThan ,$Price ,$ScreenPrice);
+
             QuotationDetailController::index();
         }
 
