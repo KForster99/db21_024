@@ -35,7 +35,7 @@ class QuotationDetail
     {
         $quotationDetailList = [];
         require("connection_connect.php");
-        $sql = "select * from Q09,product WHERE product.P_ID = Q09.P_ID order by Q09.Q_ID , Q09.P_ID, Q09.PC_Color";
+        $sql = "SELECT * FROM quotationDetail, quotation_detail, product_color, product WHERE quotationDetail.QD_ID = quotation_detail.QD_ID AND product_color.PC_ID = quotation_detail.PC_ID AND product.P_ID = product_color.P_ID";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
             $Qid = $my_row[Q_ID];

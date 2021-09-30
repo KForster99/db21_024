@@ -20,8 +20,6 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
         [<a href="?controller=productRate&action=index">productRate</a>]
     <br>
 
-   
-
     <?php require_once("./routes.php"); ?>
     
 </body>   

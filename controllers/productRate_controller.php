@@ -13,7 +13,7 @@
         }
 
         public function addProductRate(){
-            $ID = $_GET['P_ID'];
+            $ID = $_GET['P_ID']."_P".$_GET['QtyMoreThan'];
             $P_ID = $_GET['P_ID'];
             $QtyMoreThan = $_GET['QtyMoreThan'];
             $Price = $_GET['Price'];
@@ -21,7 +21,13 @@
 
             ProductRate::Add($ID, $P_ID, $QtyMoreThan ,$Price ,$ScreenPrice);
 
-            QuotationDetailController::index();
+            ProductRateController::index();
+        }
+
+        public function search(){
+            $key = $_GET['key'];
+            $productRate_list = ProductRate::search($key);
+            require_once("./views/productRate/index_productRate.php");
         }
 
     }
