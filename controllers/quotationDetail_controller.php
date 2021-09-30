@@ -19,7 +19,7 @@
         public function addQuotationDetail()
         {
             $QID = $_GET['QID'];
-            $PID = $_GET['proID'];
+            $PID = $_GET['procID'];
             $QtyScr = $_GET['QtyScr'];
             $Unit = $_GET['Unit'];
             
