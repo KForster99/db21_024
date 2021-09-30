@@ -25,7 +25,7 @@
         <td> $productRate->Price </td> 
         <td> $productRate->ScreenPrice </td> 
         <td> <a href=?controller=productRate&action=updateForm&ID=$productRate->ID> update </a> </td>
-        <td> <a href=?controller=productRate&action=deleteConfirm&ID=$productRate->ID> delete </a> </td> </tr>"; 
+        <td> <a href=?controller=productRate&action=deleteConfirm&ID=$productRate->ID> deleteioio </a> </td> </tr>"; 
     }
 
     echo "</table>";
