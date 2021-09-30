@@ -31,9 +31,10 @@
 
         }
 
-        public function search(){
+        public function searchQuotationDetail(){
             $key = $_GET['key'];
-            $productDetail_list = QuotationDetail::search($key);
+            $quotationDetail_list = QuotationDetail::search($key);
+            echo "search";
             require_once("./views/quotationDetail/index_quotationDetail.php");
         }
 
