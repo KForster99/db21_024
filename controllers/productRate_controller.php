@@ -9,7 +9,7 @@
 
         public function newProductRate(){
             $product_list = Product::getAll();
-            require_once("./views/quotation/newQuotation.php");
+            require_once("./views/productRate/newProductRate.php");
         }
 
     }
