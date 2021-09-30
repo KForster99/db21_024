@@ -33,12 +33,12 @@ class Quotation
     // }
     public static function getAll()
     {
-        echo "ingetall";
+        // echo "ingetall";
         $quotationList = [];
         require("connection_connect.php");
         $sql = "select * from quotation,employee,customer where quotation.E_Sale = employee.E_ID and quotation.C_ID = customer.C_ID";
         $result = $conn->query($sql);
-        echo $sql;
+        // echo $sql;
         while ($my_row = $result->fetch_assoc()) {
             $Q_ID = $my_row[Q_ID];
             $C_ID = $my_row[C_ID];
