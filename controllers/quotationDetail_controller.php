@@ -18,14 +18,15 @@
 
         public function addQuotationDetail()
         {
+            $QDID = $_GET['QID']."_".$_GET['procID'];
             $QID = $_GET['QID'];
-            $PID = $_GET['proID'];
+            $PID = $_GET['procID'];
+            $QtyScr = $_GET['QtyScr'];
             $Unit = $_GET['Unit'];
             
-            
-            echo $QID." ".$PID." ".$Unit;
+            echo $QID." ".$PID." ".$QtyScr." ".$Unit;
 
-            QuotationDetail::Add($QID,$PID,$Unit);
+            QuotationDetail::Add($QDID,$QID,$PID,$QtyScr,$Unit);
             QuotationDetailController::index();
 
         }

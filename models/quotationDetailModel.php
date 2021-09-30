@@ -3,20 +3,22 @@ class QuotationDetail
 {
     public $Qid;
     public $Pid;
-    //public $Pname;
+    public $Pname;
     public $Pcolor;
     public $Unit;
+    public $QDScr;
     public $UnitPrice;
     public $Total;
 
 
-    public function __construct($Qid, $Pid,$Pname, $Pcolor,$Unit, $UnitPrice,$Total)
+    public function __construct($Qid, $Pid,$Pname, $Pcolor,$Unit,$QDScr, $UnitPrice,$Total)
     {
         $this->Qid = $Qid;
         $this->Pid = $Pid;
         $this->Pname = $Pname;
         $this->Pcolor = $Pcolor;
         $this->Unit = $Unit;
+        $this->QDScr = $QDScr;
         $this->UnitPrice = $UnitPrice;
         $this->Total = $Total;
 
@@ -43,10 +45,11 @@ class QuotationDetail
             $Pname = $my_row[P_Name];
             $Pcolor = $my_row[PC_Color];
             $Unit = $my_row[QD_Quantity];
+            $QDScr = $my_row[QD_ScreenQty];
             $UnitPrice = $my_row[Price];
             $Total = $my_row[Total];
 
-            $quotationDetailList[] = new QuotationDetail($Qid, $Pid, $Pname,$Pcolor,$Unit,$UnitPrice,$Total);
+            $quotationDetailList[] = new QuotationDetail($Qid, $Pid, $Pname,$Pcolor,$Unit,$QDScr,$UnitPrice,$Total);
         }
         require("connection_close.php");
         return $quotationDetailList;
@@ -62,10 +65,10 @@ class QuotationDetail
     //     require("connection_close.php");
     //     return ;
     // }
-    public static function Add($QID,$PID,$Color,$Unit,$UnitPrice,$Amount)
+    public static function Add($QDID,$QID,$procID,$QtyScr,$Unit)
     {
         require("connection_connect.php");
-        $sql = "";
+        $sql = "INSERT INTO `quotation_detail` (`QD_ID`, `QD_Quantity`, `QD_ScreenQty`, `PC_ID`, `Q_ID`) VALUES ('$QDID', '$Unit', '$QtyScr', '$procID', '$QID');";
         $result = $conn->query($sql);
         require("connection_close.php");
         return ;
