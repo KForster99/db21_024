@@ -2,7 +2,7 @@
 $controllers = array('pages'=>['home','error'],
                     'quotation'=>['index','newQuotation'],
                     'quotationDetail'=>['index','newQuotationDetail','addQuotationDetail','searchQuotationDetail'],
-                    'productRate'=>['index', 'newProductRate', 'addProductRate', 'search', 'updateForm']);
+                    'productRate'=>['index', 'newProductRate', 'addProductRate', 'search', 'updateForm', 'update']);
 
 function call($controller,$action){
     require_once("./controllers/".$controller."_controller.php");
