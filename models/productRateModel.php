@@ -84,7 +84,6 @@
 
         public static function update($New_ID, $P_ID, $QtyMoreThan, $Price, $ScreenPrice, $ID)
         {
-            echo $New_ID;
             require("connection_connect.php");
             $sql = "UPDATE product_rate SET PR_ID = '$New_ID', PR_QtyMoreThan = '$QtyMoreThan', PR_Price = '$Price', PR_ScreenPrice = '$ScreenPrice', P_ID = '$P_ID' WHERE product_rate.PR_ID = '$ID'";
             $result = $conn->query($sql);
