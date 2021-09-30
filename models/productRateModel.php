@@ -32,7 +32,7 @@
         public static function getAll(){
             $productRateList = [];
             require( "connection_connect.php" );
-            $sql = "select * from product,product_rate where product.P_ID = product_rate.P_ID";
+            $sql = "SELECT * FROM product,product_rate WHERE product.P_ID = product_rate.P_ID";
             $result = $conn->query($sql);
             while ( $my_row = $result->fetch_assoc() ) {
                 $ID = $my_row[PR_ID];
@@ -60,10 +60,10 @@
         //     return ;
         // }
 
-        // public static function Add()
+        // public static function Add($ID, $P_ID, $QtyMoreThan ,$Price ,$ScreenPrice)
         // {
         //     require("connection_connect.php");
-        //     $sql = "";
+        //     $sql = "insert into `product_rate` (`PR_ID`, `PR_QtyMoreThan`, `PR_Price`, `PR_ScreenPrice`, `P_ID`) VALUES ('PR001_R000', '112', '12', '12', 'PR001')";
         //     $result = $conn->query($sql);
         //     require("connection_close.php");
         //     return ;
