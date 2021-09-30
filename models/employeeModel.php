@@ -1,12 +1,12 @@
 <?php
 class Employee
 {
-    public $id, $name;
+    public $empID, $empName;
 
-    public function __construct($id, $name)
+    public function __construct($empID, $empName)
     {
-        $this->id = $id;
-        $this->name = $name;
+        $this->empID = $empID;
+        $this->empName = $empName;
     }
     public static function getAll()
     {
