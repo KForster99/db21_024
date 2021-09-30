@@ -11,7 +11,7 @@ echo $productRate->ScreenPrice."<br>"; ?>
 <label>สินค้า <select name="P_ID">
 <?php foreach($product_list as $product){
         echo "<option value = $product->ID";
-        if($product->ID == $productRate->P_ID) {echo "selected='selected'";}
+        if($product->ID == $productRate->P_ID) {echo " selected='selected'";}
         echo">$product->Name</option>";}?>
 </select></label><br>
 
