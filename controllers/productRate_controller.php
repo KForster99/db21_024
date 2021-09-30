@@ -7,7 +7,7 @@
             require_once("./views/productRate/index_productRate.php");
         }
 
-        public function newQuotation(){
+        public function newProductRate(){
             $product_list = Product::getAll();
             require_once("./views/quotation/newQuotation.php");
         }
