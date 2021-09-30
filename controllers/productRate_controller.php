@@ -8,7 +8,8 @@
         }
 
         public function newProductRate(){
-            require_once("./views/productRate/index_productRate.php");
+            $product_list = Product::getAll();
+            require_once("./views/productRate/newProductRate.php");
         }
 
     }
