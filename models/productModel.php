@@ -12,10 +12,10 @@
 
         public static function getAll(){
             $productList = [];
-            require( "connection_connect.php" );
+            require("connection_connect.php");
             $sql = "SELECT * FROM product";
             $result = $conn->query($sql);
-            while ( $my_row = $result->fetch_assoc() ) {
+            while ($my_row = $result->fetch_assoc()) {
                 $ID = $my_row[P_ID];
                 $Name = $my_row[P_Name];
                 $productList[] = new Product($ID ,$Name);
