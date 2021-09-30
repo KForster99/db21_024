@@ -1,20 +1,23 @@
 <form method="get" action="">
-    <label>เลขใบเสนอราคา
+    <label>เลขใบเสนอราคา&nbsp;&nbsp;&nbsp;&nbsp;
         <select name="QID">
             <?php
             foreach ($quotation_list as $quotation) {
                 echo "<option value = $quotation->Q_ID>$quotation->Q_ID</option>";
             } ?></select></label><br>
-    <label>วันที่<input type="date" name="date" /></label><br>
-    <label>ลูกค้า
+    <label>วันที่&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="date" name="date" /></label><br>
+    <label>ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select name="cusName">
             <?php
             foreach ($quotation_list as $quotation) {
                 echo "<option value=$quotation->C_ID>$quotation->cusName</option>";
             } ?> </select></label><br>
-    <label>ที่อยู่ลูกค้า<input type="text" name="cusAddress" /></label><br>
-    <label>เบอร์โทรศัพท์<input type="text" name="cusPhone" /></label><br>
-    <label>พนักงาน
+    <label>ที่อยู่ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="cusAddress" /></label><br>
+    <label>เบอร์โทรศัพท์&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="cusPhone" /></label><br>
+    <label>พนักงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select name="empName">
             <?php
             foreach ($quotation_list as $quotation) {

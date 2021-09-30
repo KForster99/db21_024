@@ -53,17 +53,26 @@ class Quotation
         require("connection_close.php");
         return $quotationList;
     }
-    // public static function search()
-    // {
-    //     require("connection_connect.php");
-    //     $sql = "";
-    //     $result = $conn->query($sql);
-    //     while ($my_row = $result->fetch_assoc()) {
-
-    //     }
-    //     require("connection_close.php");
-    //     return ;
-    // }
+    public static function search($key)
+    {
+        $quotationList = [];
+        require("connection_connect.php");
+        $sql = "";
+        $result = $conn->query($sql);
+        while ($my_row = $result->fetch_assoc()) {
+            $Q_ID = $my_row[Q_ID];
+            $C_ID = $my_row[C_ID];
+            $E_ID = $my_row[E_ID];
+            $date = $my_row[Q_Date];
+            $cusName = $my_row[C_Name];
+            $cusAddress = $my_row[C_Address];
+            $cusPhone = $my_row[C_Phone];
+            $empName = $my_row[E_Name];
+            $quotationList[] = new Quotation($Q_ID,$C_ID,$E_ID, $date, $cusName, $cusAddress, $cusPhone, $empName);
+        }
+        require("connection_close.php");
+        return ;
+    }
     // public static function add()
     // {
     //     require("connection_connect.php");
