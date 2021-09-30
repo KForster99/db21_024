@@ -63,7 +63,7 @@
         public static function Add($ID, $P_ID, $QtyMoreThan, $Price, $ScreenPrice)
         {
             require("connection_connect.php");
-            $sql = "INSERT INTO product_rate (PR_ID, PR_QtyMoreThan, PR_Price, PR_ScreenPrice, P_ID) VALUES ('$ID', '$P_ID', '$QtyMoreThan', '$Price', '$ScreenPrice')";
+            $sql = "INSERT INTO product_rate (PR_ID, PR_QtyMoreThan, PR_Price, PR_ScreenPrice, P_ID) VALUES ('$ID', '$QtyMoreThan', '$Price', '$ScreenPrice', '$P_ID')";
             $result = $conn->query($sql);
             require("connection_close.php");
             return ;
