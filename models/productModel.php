@@ -5,9 +5,9 @@
         public $proID;
         public $proName;
 
-        public function __construct($proID, $proName){
-            $this->proID = $proID;
-            $this->proName = $proName;
+        public function __construct($ID, $Name){
+            $this->ID = $ID;
+            $this->Name = $Name;
         }
 
         public static function getAll(){
@@ -17,12 +17,12 @@
             $sql = "select * from product";
             $result = $conn->query($sql);
             while ($my_row = $result->fetch_assoc()) {
-                $proID = $my_row[P_ID];
-                $proName = $my_row[P_Name];
-                $productList[] = new ProductColor($proID, $proName);
-            }
+                $ID = $my_row[P_ID];
+                $Name = $my_row[P_Name];
+                $productList[] = new ProductColor($ID, $Name);
+            } 
             require("connection_close.php");
             return $productList;
         }
-        
+
     }
