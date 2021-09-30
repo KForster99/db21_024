@@ -34,6 +34,13 @@
             require_once("./views/productRate/index_productRate.php");
         }
 
+        public function updateForm(){
+            $ID = $_GET['ID'];
+            $productRate = ProductRate::get($ID);
+            $product_list = Product::getAll();
+            require_once("./views/productRate/index_productRate.php");
+        }
+
     }
 
 ?>
