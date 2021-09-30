@@ -12,6 +12,7 @@
 
         public static function getAll(){
             $productList = [];
+            echo "getAll";
             require("connection_connect.php");
             $sql = "select * from product";
             $result = $conn->query($sql);
@@ -21,6 +22,7 @@
                 $productList[] = new ProductColor($ID, $Name);
             } 
             require("connection_close.php");
+            echo "getAll2";
             return $productList;
         }
 
