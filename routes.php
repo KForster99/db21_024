@@ -23,6 +23,7 @@ function call($controller,$action){
                                     break;
 
         case "productRate" :    require_once("./models/productRateModel.php");
+                                require_once("./models/productModel.php");
                                 $controller = new ProductRateController();
                                 break;
 
