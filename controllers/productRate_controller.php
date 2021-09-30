@@ -13,7 +13,7 @@
         }
 
         public function addProductRate(){
-            $ID = $_GET['P_ID']."_P";
+            $ID = $_GET['P_ID']."_R";
             while(strlen($ID)+strlen($_GET['QtyMoreThan']) < 10) {
                 $ID = $ID."0";
             }
