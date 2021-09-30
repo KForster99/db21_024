@@ -31,10 +31,10 @@
 
         public static function getAll(){
             $productRateList = [];
-            require( "connection_connect.php" );
+            require("connection_connect.php");
             $sql = "SELECT * FROM product,product_rate WHERE product.P_ID = product_rate.P_ID";
             $result = $conn->query($sql);
-            while ( $my_row = $result->fetch_assoc() ) {
+            while ($my_row = $result->fetch_assoc()) {
                 $ID = $my_row[PR_ID];
                 $P_ID = $my_row[P_ID];
                 $P_Name = $my_row[P_Name];
@@ -54,10 +54,17 @@
             $sql = "SELECT * FROM product,product_rate WHERE product.P_ID = product_rate.P_ID AND ( product.P_ID LIKE '$key' OR product.P_Name LIKE '$key')";
             $result = $conn->query($sql);
             while ($my_row = $result->fetch_assoc()) {
+                $ID = $my_row[PR_ID];
+                $P_ID = $my_row[P_ID];
+                $P_Name = $my_row[P_Name];
+                $QtyMoreThan = $my_row[PR_QtyMoreThan];
+                $Price = $my_row[PR_Price];
+                $ScreenPrice = $my_row[PR_ScreenPrice];
 
+                $productRateList[] = new ProductRate($ID, $P_ID, $P_Name, $QtyMoreThan, $Price, $ScreenPrice);
             }
             require("connection_close.php");
-            return ;
+            return $productRateList;
         }
 
         public static function Add($ID, $P_ID, $QtyMoreThan, $Price, $ScreenPrice)
