@@ -8,7 +8,7 @@
         }
 
         public function newProductRate(){
-            require_once("./views/pages/home.php");
+            require_once("./views/productRate/index_productRate.php");
         }
 
     }
