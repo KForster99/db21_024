@@ -8,11 +8,10 @@
         }
 
         public function newQuotation(){
-            $customer_list = Customer::getAll();
-            $employee_list = Employee::getAll();
+            $product_list = Product::getAll();
             require_once("./views/quotation/newQuotation.php");
         }
 
     }
-    
+
 ?>
