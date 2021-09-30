@@ -9,11 +9,11 @@
         public $Price;
         public $ScreenPrice;
 
-        public function __construct($ID ,$P_ID ,$P_Name ,$QtyMorethan ,$Price ,$ScreenPrice){
+        public function __construct($ID ,$P_ID ,$P_Name ,$QtyMoreThan ,$Price ,$ScreenPrice){
             $this->ID = $ID;
             $this->P_ID = $P_ID;
             $this->P_Name = $P_Name;
-            $this->QtyMorethan = $QtyMorethan;
+            $this->QtyMorethan = $QtyMoreThan;
             $this->Price = $Price;
             $this->ScreenPrice = $ScreenPrice;
         }
@@ -38,11 +38,11 @@
                 $ID = $my_row[PR_ID];
                 $P_ID = $my_row[P_ID];
                 $P_Name = $my_row[P_Name];
-                $QtyMorethan = $my_row[PR_QtyMoreThan];
+                $QtyMoreThan = $my_row[PR_QtyMoreThan];
                 $Price = $my_row[PR_Price];
                 $ScreenPrice = $my_row[PR_ScreenPrice];
 
-                $productRateList[] = new ProductRate($ID ,$P_ID ,$P_Name ,$QtyMorethan ,$Price ,$ScreenPrice);
+                $productRateList[] = new ProductRate($ID ,$P_ID ,$P_Name ,$QtyMoreThan ,$Price ,$ScreenPrice);
             }
             require("connection_close.php");
             return $productRateList;
