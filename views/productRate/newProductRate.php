@@ -2,8 +2,8 @@
 
 <label>สินค้า <select name="ID">
 <?php foreach($product_list as $product){
-        echo "<option value = $product->ID>
-        $product->ID</option>";}?>
+        echo "<option value = $product->Name>
+        $product->Name</option>";}?>
 </select></label><br>
 
 <label>จำนวนมากกว่า <input type="text" name="QtyMoreThan"/> </label><br>
