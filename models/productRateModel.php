@@ -29,7 +29,6 @@
             $QtyMoreThan = $my_row[PR_QtyMoreThan];
             $Price = $my_row[PR_Price];
             $ScreenPrice = $my_row[PR_ScreenPrice];
-            
             require("connection_close.php");
             return new ProductRate($ID, $P_ID, $P_Name, $QtyMoreThan, $Price, $ScreenPrice);
         }
@@ -79,7 +78,6 @@
             $sql = "INSERT INTO product_rate (PR_ID, PR_QtyMoreThan, PR_Price, PR_ScreenPrice, P_ID) VALUES ('$ID', '$QtyMoreThan', '$Price', '$ScreenPrice', '$P_ID')";
             $result = $conn->query($sql);
             require("connection_close.php");
-            return ;
         }
 
         public static function update($New_ID, $P_ID, $QtyMoreThan, $Price, $ScreenPrice, $ID)
@@ -88,16 +86,14 @@
             $sql = "UPDATE product_rate SET PR_ID = '$New_ID', PR_QtyMoreThan = '$QtyMoreThan', PR_Price = '$Price', PR_ScreenPrice = '$ScreenPrice', P_ID = '$P_ID' WHERE product_rate.PR_ID = '$ID'";
             $result = $conn->query($sql);
             require("connection_close.php");
-            return ;
         }
 
-        // public static function delete()
-        // {
-        //     require_once("connection_connect.php");
-        //     $sql = "";
-        //     $result = $conn->query($sql);
-        //     require("connection_close.php");
-        //     return ;
-        // }
+        public static function delete($ID)
+        {
+            require("connection_connect.php");
+            $sql = "DELETE FROM product_rate WHERE product_rate.PR_ID = '$ID'";
+            $result = $conn->query($sql);
+            require("connection_close.php");
+        }
 
     }
