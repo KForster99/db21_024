@@ -23,7 +23,7 @@
             $QtyScr = $_GET['QtyScr'];
             $Unit = $_GET['Unit'];
             
-            echo $QID." ".$PID." ".$QtyScr." ".$Unit."\r\n";
+            echo $QID." ".$PID." ".$QtyScr." ".$Unit;
 
             QuotationDetail::Add($QID,$PID,$QtyScr,$Unit);
             QuotationDetailController::index();
