@@ -50,6 +50,7 @@
 
         public static function search($key)
         {
+            $productRateList = [];
             require("connection_connect.php");
             $sql = "SELECT * FROM product,product_rate WHERE product.P_ID = product_rate.P_ID AND ( product.P_ID LIKE '$key' OR product.P_Name LIKE '$key')";
             $result = $conn->query($sql);
