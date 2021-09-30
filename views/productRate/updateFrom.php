@@ -7,7 +7,7 @@
         echo">$product->Name</option>";}?>
 </select></label><br>
 
-<label>จำนวนมากกว่า <input type="text" name="QtyMoreThan" value="<?$productRate->QtyMoreThan; ?>"/> </label><br>
+<label>จำนวนมากกว่า <input type="text" name="QtyMoreThan" value="<?php echo $productRate->QtyMoreThan; ?>"/> </label><br>
 <label>ราคา <input type="text" name="Price" value="<?php echo $productRate->Price; ?>"/> </label><br>
 <label>ราคาสกรีน <input type="text" name="ScreenPrice" value="<?php echo $productRate->ScreenPrice; ?>"/> </label><br>
 
