@@ -1,12 +1,12 @@
 <form method="get" action="">
 
 <?php echo "Test";
-echo $productRate->ID;
-echo $productRate->P_ID;
-echo $productRate->P_Name;
-echo $productRate->QtyMorethan;
-echo $productRate->Price;
-echo $productRate->ScreenPrice; ?>
+echo $productRate->ID."<br>";
+echo $productRate->P_ID."<br>";
+echo $productRate->P_Name."<br>";
+echo $productRate->QtyMorethan."<br>";
+echo $productRate->Price."<br>";
+echo $productRate->ScreenPrice."<br>"; ?>
 
 <label>สินค้า <select name="P_ID">
 <?php foreach($product_list as $product){
