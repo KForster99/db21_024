@@ -41,6 +41,23 @@
             require_once("./views/productRate/updateFrom.php");
         }
 
+        public function update(){
+            $New_ID = $_GET['P_ID']."_R";
+            while(strlen($New_ID)+strlen($_GET['QtyMoreThan']) < 10) {
+                $New_ID = $New_ID."0";
+            }
+            $New_ID = $New_ID.$_GET['QtyMoreThan'];
+            $P_ID = $_GET['P_ID'];
+            $QtyMoreThan = $_GET['QtyMoreThan'];
+            $Price = $_GET['Price'];
+            $ScreenPrice = $_GET['ScreenPrice'];
+            $ID = $_GET['ID'];
+
+            ProductRate::update($New_ID, $P_ID, $QtyMoreThan, $Price, $ScreenPrice, $ID);
+
+            ProductRateController::index();
+        }
+
     }
 
 ?>
