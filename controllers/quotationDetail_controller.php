@@ -31,5 +31,12 @@
 
         }
 
+        public function searchQuotationDetail(){
+            $key = $_GET['key'];
+            $quotationDetail_list = QuotationDetail::search($key);
+            echo "search";
+            require_once("./views/quotationDetail/index_quotationDetail.php");
+        }
+
     }
 ?>
