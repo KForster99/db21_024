@@ -1,5 +1,12 @@
 <form method="get" action="">
 
+<?php echo $productRate->ID;
+echo $productRate->P_ID;
+echo $productRate->P_Name;
+echo $productRate->QtyMorethan;
+echo $productRate->Price;
+echo $productRate->ScreenPrice; ?>
+
 <label>สินค้า <select name="P_ID">
 <?php foreach($product_list as $product){
         echo "<option value = $product->ID";
