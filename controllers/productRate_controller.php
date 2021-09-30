@@ -24,6 +24,12 @@
             ProductRateController::index();
         }
 
+        public function search(){
+            $key = $_GET['key'];
+            $productRate_list = ProductRate::search($key);
+            require_once("./views/productRate/index_productRate.php");
+        }
+
     }
 
 ?>
