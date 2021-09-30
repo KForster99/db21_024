@@ -18,7 +18,7 @@
             while ( $my_row = $result->fetch_assoc() ) {
                 $ID = $my_row[P_ID];
                 $Name = $my_row[P_Name];
-                $productRateList[] = new ProductRate($ID ,$Name);
+                $productList[] = new ProductRate($ID ,$Name);
             }
             require("connection_close.php");
             return $productList;
