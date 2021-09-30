@@ -20,12 +20,12 @@
         {
             $QID = $_GET['QID'];
             $PID = $_GET['proID'];
+            $QtyScr = $_GET['QtyScr'];
             $Unit = $_GET['Unit'];
-            
             
             echo $QID." ".$PID." ".$Unit;
 
-            QuotationDetail::Add($QID,$PID,$Unit);
+            QuotationDetail::Add($QID,$PID,$QtyScr,$Unit);
             QuotationDetailController::index();
 
         }

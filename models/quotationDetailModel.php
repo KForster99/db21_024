@@ -65,7 +65,7 @@ class QuotationDetail
     //     require("connection_close.php");
     //     return ;
     // }
-    public static function Add($QID,$PID,$Unit)
+    public static function Add($QID,$PID,$QtyScr,$Unit)
     {
         require("connection_connect.php");
         $sql = "";

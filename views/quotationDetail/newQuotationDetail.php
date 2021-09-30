@@ -11,7 +11,7 @@
         echo "<option value = $pro->procID>
         $pro->proName $pro->color</option>";}?>
 </select></label><br>
-
+<label>QtyScreen<input type="text" name="QtyScr"/> </label><br>
 <label>Unit<input type="text" name="Unit"/> </label><br>
 
 
