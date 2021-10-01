@@ -100,11 +100,11 @@ class QuotationDetail
         require("connection_close.php");
         return ;
     }
-    public static function update($NewQDID,$QID,$PCID,$QtyScr,$Unit)
+    public static function update($NewQDID,$QID,$PCID,$QtyScr,$Unit,$ID)
     {
-        echo $NewQDID,$QID,$PCID,$QtyScr,$Unit;
+        //echo $NewQDID,$QID,$PCID,$QtyScr,$Unit;
         require("connection_connect.php");
-        $sql = "UPDATE quotation_detail SET QD_Quantity = '$Unit', QD_ScreenQty = '$QtyScr', PC_ID = '$PCID', Q_ID = '$QID' WHERE quotation_detail.QD_ID = $NewQDID";
+        $sql = "UPDATE quotation_detail SET QD_ID = '$NewQDID' ,QD_Quantity = '$Unit', QD_ScreenQty = '$QtyScr', PC_ID = '$PCID', Q_ID = '$QID' WHERE quotation_detail.QD_ID = '$ID'";
         $result = $conn->query($sql);
         require("connection_close.php");
     }

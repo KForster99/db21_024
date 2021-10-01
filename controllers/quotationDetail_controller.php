@@ -45,12 +45,14 @@
         }
 
         public function updateQuotationDetail(){
+            $ID = $_GET['ID'];
+
             $NewQDID = $_GET['QID']."_".$_GET['procID'];
             $QID = $_GET['QID'];
             $PCID = $_GET['procID'];
             $QtyScr = $_GET['QtyScr'];
             $Unit = $_GET['Unit'];
-            QuotationDetail::update($NewQDID,$QID,$PCID,$QtyScr,$Unit);
+            QuotationDetail::update($NewQDID,$QID,$PCID,$QtyScr,$Unit,$ID);
             QuotationDetailController::index();
         }
 
