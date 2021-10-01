@@ -2,17 +2,18 @@
 
 <label>QuotationID <select name="QID">
 <?php foreach($quotation_list as $quotation){
-        echo "<option value = $quotation->Q_ID>";
-
-        if($quotation->Q_ID == $quotationDetail->Qid) {echo " selected='selected'";}
-        echo">$quotation->Name</option>";}?>
+          echo "<option value = $quotation->Q_ID";
+          if($quotation->Q_ID==$quotationDetail->Qid){echo " selected='selected'";}
+          echo ">$quotation->Q_ID</option>";
+        }?>
 </select></label><br>
 
 <label>ProductID <select name="procID">
-
 <?php foreach($product_list as $pro){
-        echo "<option value = $pro->procID>
-        $pro->proName $pro->color</option>";}?>
+        echo "<option value = $pro->procID";
+        if($pro->procID==$quotationDetail->PCid){echo " selected='selected'";}
+        echo ">$pro->proName $pro->color</option>";
+        }?>
 </select></label><br>
 
 <label>QtyScreen<input type="text" name="QtyScr"/> </label><br>
@@ -20,5 +21,5 @@
 
 <input type="hidden" name="controller" value="quotationDetail"/>
 <button type="submit" name="action" value="index"> Back</button>
-<button type="submit" name="action" value="addQuotationDetail"> Save</button>
+<button type="submit" name="action" value="updateQuotationDetail"> Update</button>
 </form>

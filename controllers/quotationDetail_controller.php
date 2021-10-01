@@ -44,5 +44,16 @@
             require_once("./views/quotationDetail/updateFormQuotationDetail.php");
         }
 
+        public function updateQuotationDetail(){
+            $NewQDID = $_GET['QID']."_".$_GET['procID'];
+            $QID = $_GET['QID'];
+            $PCID = $_GET['procID'];
+            $QtyScr = $_GET['QtyScr'];
+            $Unit = $_GET['Unit'];
+            QuotationDetail::update($NewQDID,$QID,$PCID,$QtyScr,$Unit);
+            QuotationDetailController::index();
+        }
+
+
     }
 ?>

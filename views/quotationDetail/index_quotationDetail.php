@@ -28,7 +28,7 @@ Search</button>
     <td>$quotationDetail->QDScr</td> 
     <td>$quotationDetail->UnitPrice</td> 
     <td>$quotationDetail->Total</td> 
-    <td> <a href=?controller=quotationDetail & action=updateFormQuotationDetail & ID=$quotationDetail->QDid> update bie </a> </td>
+    <td> <a href=?controller=quotationDetail&action=updateFormQuotationDetail&ID=$quotationDetail->QDid> update </a> </td>
     <td>delete</td> </tr>"; }
 echo "</table>";
 ?>
