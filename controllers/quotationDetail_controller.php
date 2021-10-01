@@ -8,11 +8,8 @@
 
         public function newQuotationDetail()
         {
-            echo "new1";
             $product_list = ProductColor::getAll();
-            echo "new2";
             $quotation_list = Quotation::getAll();
-            echo "new3";
             require_once("./views/quotationDetail/newQuotationDetail.php");
         }
 
@@ -36,6 +33,15 @@
             $quotationDetail_list = QuotationDetail::search($key);
             echo "search";
             require_once("./views/quotationDetail/index_quotationDetail.php");
+        }
+
+        public function updateFormQuotationDetail(){
+            $ID = $_GET['ID'];
+            $quotationDetail = QuotationDetail::get($ID);
+            $product_list = ProductColor::getAll();
+            $quotation_list = Quotation::getAll();
+
+            require_once("./views/quotationDetail/updateFormQuotationDetail.php");
         }
 
     }

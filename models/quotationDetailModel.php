@@ -9,9 +9,10 @@ class QuotationDetail
     public $QDScr;
     public $UnitPrice;
     public $Total;
+    public $QDid;
 
 
-    public function __construct($Qid, $Pid,$Pname, $Pcolor,$Unit,$QDScr, $UnitPrice,$Total)
+    public function __construct($QDid,$Qid, $Pid,$Pname, $Pcolor,$Unit,$QDScr, $UnitPrice,$Total)
     {
         $this->Qid = $Qid;
         $this->Pid = $Pid;
@@ -21,18 +22,27 @@ class QuotationDetail
         $this->QDScr = $QDScr;
         $this->UnitPrice = $UnitPrice;
         $this->Total = $Total;
+        $this->QDid = $QDid;
 
     }
-    // public static function get()
-    // {
-    //     require("connection_connect.php");
-    //     $sql = "";
-    //     $result = $conn->query($sql);
-    //     $my_row = $result->fetch_assoc();
+    public static function get($ID){
+        require("connection_connect.php");
+        $sql = "SELECT * FROM quotationDetail, quotation_detail, product_color, product WHERE quotationDetail.QD_ID = quotation_detail.QD_ID AND product_color.PC_ID = quotation_detail.PC_ID AND product.P_ID = product_color.P_ID AND quotation_detail.QD_ID = '$ID'";
+        $result = $conn->query($sql);
+        $my_row = $result->fetch_assoc();
+        $QDid = $my_row[QD_ID];
+        $Qid = $my_row[Q_ID];
+        $Pid = $my_row[P_ID];
+        $Pname = $my_row[P_Name];
+        $Pcolor = $my_row[PC_Color];
+        $Unit = $my_row[QD_Quantity];
+        $QDScr = $my_row[QD_ScreenQty];
+        $UnitPrice = $my_row[Price];
+        $Total = $my_row[Total];
+        require("connection_close.php");
+        return new QuotationDetail($QDid,$Qid, $Pid, $Pname,$Pcolor,$Unit,$QDScr,$UnitPrice,$Total);
+    }
 
-    //     require("connection_close.php");
-    //     return ;
-    // }
     public static function getAll()
     {
         $quotationDetailList = [];
@@ -40,6 +50,7 @@ class QuotationDetail
         $sql = "SELECT * FROM quotationDetail, quotation_detail, product_color, product WHERE quotationDetail.QD_ID = quotation_detail.QD_ID AND product_color.PC_ID = quotation_detail.PC_ID AND product.P_ID = product_color.P_ID";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
+            $QDid = $my_row[QD_ID];
             $Qid = $my_row[Q_ID];
             $Pid = $my_row[P_ID];
             $Pname = $my_row[P_Name];
@@ -49,7 +60,7 @@ class QuotationDetail
             $UnitPrice = $my_row[Price];
             $Total = $my_row[Total];
 
-            $quotationDetailList[] = new QuotationDetail($Qid, $Pid, $Pname,$Pcolor,$Unit,$QDScr,$UnitPrice,$Total);
+            $quotationDetailList[] = new QuotationDetail($QDid,$Qid, $Pid, $Pname,$Pcolor,$Unit,$QDScr,$UnitPrice,$Total);
         }
         require("connection_close.php");
         return $quotationDetailList;

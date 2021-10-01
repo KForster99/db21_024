@@ -11,6 +11,20 @@ class ProductColor
         // echo $proID;
         // echo $proName;
     }
+
+    // public static function get($ID){
+    //     require("connection_connect.php");
+    //     $sql = "select * from product,product_color WHERE product.P_ID = product_color.P_ID AND quotation_detail.QD_ID = '$ID'";
+    //     $result = $conn->query($sql);
+    //     $my_row = $result->fetch_assoc();
+    //     $procID = $my_row[PC_ID];
+    //     $proName = $my_row[P_Name];
+    //     $color = $my_row[PC_Color];
+    //     require("connection_close.php");
+    //     return new ProductColor($procID, $proName,$color);
+    // }
+
+
     public static function getAll()
     {
         echo "getAll";

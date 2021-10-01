@@ -7,8 +7,15 @@ new QuotationDetail <a href=?controller=quotationDetail&action=newQuotationDetai
     <button type="submit" name="action" value="searchQuotationDetail">
 Search</button>
 </form><br>
-<tr> <td>Quotation ID</td><td>Product ID</td><td>Product Name</td><td>Product Color</td>
-<td>Unit</td><td>QtyScreen</td><td>Unit Price</td><td>Amount</td>
+<tr> <td>Quotation ID</td>
+<td>Product ID</td>
+<td>Product Name</td>
+<td>Product Color</td>
+<td>Unit</td>
+<td>QtyScreen</td>
+<td>Unit Price</td>
+<td>Amount</td>
+
 
 <td>update</td><td>delete</td> </tr>
 <?php foreach($quotationDetail_list as $quotationDetail){
@@ -21,7 +28,7 @@ Search</button>
     <td>$quotationDetail->QDScr</td> 
     <td>$quotationDetail->UnitPrice</td> 
     <td>$quotationDetail->Total</td> 
-    <td> update</td>
+    <td> <a href=?controller=quotationDetail & action=updateFormQuotationDetail & ID=$quotationDetail->QDid> update bie </a> </td>
     <td>delete</td> </tr>"; }
 echo "</table>";
 ?>
