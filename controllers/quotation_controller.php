@@ -40,7 +40,7 @@ class QuotationController
     {
         $Q_ID = $_GET['Q_ID'];
         $quotation_list = Quotation::getAll();
-        require_once("./views/productRate/updateFromQuotation.php");
+        require_once("./views/quotation/updateFromQuotation.php");
     }
 
     public function updateQuotation()
@@ -60,7 +60,7 @@ class QuotationController
     {
         $Q_ID = $_GET['Q_ID'];
         $quotation_list = Quotation::get($Q_ID);
-        require_once("./views/productRate/deleteConfirmQuotation.php");
+        require_once("./views/quotation/deleteConfirmQuotation.php");
     }
 
     public function deleteQuotation()

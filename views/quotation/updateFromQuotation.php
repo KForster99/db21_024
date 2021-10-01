@@ -1,3 +1,4 @@
+<br>
 <form method="get" action="">
     <label>เลขใบเสนอราคา&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" name="Q_ID" value="<?php echo $quotation->Q_ID; ?>" /></label><br>
@@ -26,7 +27,7 @@
                     echo " selected='selected'";
                 }
                 echo ">$quotation->E_Name</option>";
-            } ?></select></label><br>
+            } ?></select></label><br><br>
 
     <input type="hidden" name="controller" value="quotation" />
     <input type="hidden" name="Q_ID" value="<?php echo $quotation->Q_ID; ?>" />
