@@ -36,7 +36,7 @@ class Quotation
         // echo "ingetall";
         $quotationList = [];
         require("connection_connect.php");
-        $sql = "select * from quotation,employee,customer where quotation.E_Sale = employee.E_ID and quotation.C_ID = customer.C_ID";
+        $sql = "SELECT * FROM quotation,employee,customer WHERE quotation.E_Sale = employee.E_ID AND quotation.C_ID = customer.C_ID";
         $result = $conn->query($sql);
         // echo $sql;
         while ($my_row = $result->fetch_assoc()) {
@@ -57,7 +57,7 @@ class Quotation
     {
         $quotationList = [];
         require("connection_connect.php");
-        $sql = "";
+        $sql = "SELECT * FROM quotation,employee,customer WHERE quotation.E_Sale = employee.E_ID AND quotation.C_ID = customer.C_ID AND (quotation.Q_ID LIKE '%$key%' OR customer.C_ID LIKE '%$key%' OR customer.C_Name LIKE '%$key%' OR employee.E_ID LIKE '%$key%' OR employee.E_Name LIKE '%$key%')";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
             $Q_ID = $my_row[Q_ID];
@@ -71,7 +71,7 @@ class Quotation
             $quotationList[] = new Quotation($Q_ID,$C_ID,$E_ID, $date, $cusName, $cusAddress, $cusPhone, $empName);
         }
         require("connection_close.php");
-        return ;
+        return $quotationList;
     }
     // public static function add()
     // {
@@ -79,7 +79,7 @@ class Quotation
     //     $sql = "";
     //     $result = $conn->query($sql);
     //     require("connection_close.php");
-    //     return ;
+    //     return quotationList;
     // }
     // public static function update()
     // {
@@ -87,7 +87,7 @@ class Quotation
     //     $sql = "";
     //     $result = $conn->query($sql);
     //     require("connection_close.php");
-    //     return ;
+    //     return quotationList;
     // }
     // public static function delete()
     // {
