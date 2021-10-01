@@ -10,7 +10,7 @@ class Quotation
     public $cusPhone;
     public $empName;
 
-    public function __construct($Q_ID,$C_ID,$E_ID,$date, $cusName, $cusAddress, $cusPhone, $empName)
+    public function __construct($Q_ID, $C_ID, $E_ID, $date, $cusName, $cusAddress, $cusPhone, $empName)
     {
         $this->Q_ID = $Q_ID;
         $this->C_ID = $C_ID;
@@ -48,7 +48,7 @@ class Quotation
             $cusAddress = $my_row[C_Address];
             $cusPhone = $my_row[C_Phone];
             $empName = $my_row[E_Name];
-            $quotationList[] = new Quotation($Q_ID,$C_ID,$E_ID, $date, $cusName, $cusAddress, $cusPhone, $empName);
+            $quotationList[] = new Quotation($Q_ID, $C_ID, $E_ID, $date, $cusName, $cusAddress, $cusPhone, $empName);
         }
         require("connection_close.php");
         return $quotationList;
@@ -57,7 +57,7 @@ class Quotation
     {
         $quotationList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM quotation,employee,customer WHERE quotation.E_Sale = employee.E_ID AND quotation.C_ID = customer.C_ID AND (quotation.Q_ID LIKE '%$key%' OR customer.C_ID LIKE '%$key%' OR customer.C_Name LIKE '%$key%' OR employee.E_ID LIKE '%$key%' OR employee.E_Name LIKE '%$key%')";
+        $sql = "SELECT * FROM quotation,employee,customer WHERE quotation.E_Sale = employee.E_ID AND quotation.C_ID = customer.C_ID AND (quotation.Q_ID LIKE '%$key%' OR customer.C_ID LIKE '%$key%' OR customer.C_Name LIKE '%$key%' OR employee.E_ID LIKE '%$key%' OR employee.E_Name LIKE '%$key%' OR quotation.Q_Date LIKE '%$key%' OR customer.C_Address LIKE '%$key%' OR customer.C_Phone LIKE '%$key%')";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
             $Q_ID = $my_row[Q_ID];
@@ -68,19 +68,19 @@ class Quotation
             $cusAddress = $my_row[C_Address];
             $cusPhone = $my_row[C_Phone];
             $empName = $my_row[E_Name];
-            $quotationList[] = new Quotation($Q_ID,$C_ID,$E_ID, $date, $cusName, $cusAddress, $cusPhone, $empName);
+            $quotationList[] = new Quotation($Q_ID, $C_ID, $E_ID, $date, $cusName, $cusAddress, $cusPhone, $empName);
         }
         require("connection_close.php");
         return $quotationList;
     }
-    // public static function add()
-    // {
-    //     require("connection_connect.php");
-    //     $sql = "";
-    //     $result = $conn->query($sql);
-    //     require("connection_close.php");
-    //     return quotationList;
-    // }
+    public static function add($QID, $CID, $EID, $date, $cusAddress, $cusPhone)
+    {
+        require("connection_connect.php");
+        $sql = "INSERT INTO `quotation` (`Q_ID`, `Q_Date`, `C_ID`, `C_Address`, `C_Phone`,`E_ID`) VALUES ('$QID', '$date', '$CID', '$cusAddress', '$cusPhone','$EID');";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        // return $quotationList;
+    }
     // public static function update()
     // {
     //     require("connection_connect.php");

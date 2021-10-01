@@ -1,6 +1,6 @@
 <?php
 $controllers = array('pages'=>['home','error'],
-                    'quotation'=>['index','newQuotation','searchQuotation'],
+                    'quotation'=>['index','newQuotation','searchQuotation','addQuotation'],
                     'quotationDetail'=>['index','newQuotationDetail','addQuotationDetail','searchQuotationDetail'],
                     'productRate'=>['index', 'newProductRate', 'addProductRate', 'search', 'updateForm', 'update', 'deleteConfirm', 'delete']);
 

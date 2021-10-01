@@ -8,7 +8,7 @@
     <label>วันที่&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="date" name="date" /></label><br>
     <label>ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <select name="cusName">
+        <select name="cusID">
             <?php
             foreach ($quotation_list as $quotation) {
                 echo "<option value=$quotation->C_ID>$quotation->cusName</option>";
@@ -18,7 +18,7 @@
     <label>เบอร์โทรศัพท์&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" name="cusPhone" /></label><br>
     <label>พนักงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <select name="empName">
+        <select name="empID">
             <?php
             foreach ($quotation_list as $quotation) {
                 echo "<option value=$quotation->E_ID>$quotation->empName</option>";
