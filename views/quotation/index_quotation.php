@@ -25,7 +25,7 @@
     <td>$quotation->cusAddress</td>
     <td>$quotation->cusPhone</td> 
     <td>$quotation->empName</td> 
-    <td> update</td>
+    <td> <a href=?controller=quotationDetail&action=updateFormQuotationDetail&ID=$quotation->Q_ID> update </a> </td>
     <td>delete</td> </tr>";
     }
     echo "</table>";

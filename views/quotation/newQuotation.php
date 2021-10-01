@@ -1,10 +1,5 @@
 <form method="get" action="">
-    <label>เลขใบเสนอราคา&nbsp;&nbsp;&nbsp;&nbsp;
-        <select name="QID">
-            <?php
-            foreach ($quotation_list as $quotation) {
-                echo "<option value = $quotation->Q_ID>$quotation->Q_ID</option>";
-            } ?></select></label><br>
+    <label>เลขใบเสนอราคา&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo 11001 + count($quotation_list); ?></label><br>
     <label>วันที่&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="date" name="date" /></label><br>
     <label>ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

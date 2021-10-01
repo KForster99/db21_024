@@ -3,7 +3,11 @@
         <select name="QID">
             <?php
             foreach ($quotation_list as $quotation) {
-                echo "<option value = $quotation->Q_ID>$quotation->Q_ID</option>";
+                echo "<option value = $quotation->Q_ID";
+                if ($quotation->Q_ID == $quotation->Qid) {
+                    echo " selected='selected'";
+                }
+                echo ">$quotation->Q_ID</option>";
             } ?></select></label><br>
     <label>วันที่&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="date" name="date" /></label><br>

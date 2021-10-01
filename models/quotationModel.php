@@ -21,16 +21,18 @@ class Quotation
         $this->cusPhone = $cusPhone;
         $this->empName = $empName;
     }
-    // public static function get()
-    // {
-    //     require("connection_connect.php");
-    //     $sql = "";
-    //     $result = $conn->query($sql);
-    //     $my_row = $result->fetch_assoc();
 
-    //     require("connection_close.php");
-    //     return ;
-    // }
+    public static function get()
+    {
+        require("connection_connect.php");
+        $sql = "";
+        $result = $conn->query($sql);
+        $my_row = $result->fetch_assoc();
+
+        require("connection_close.php");
+        return ;
+    }
+
     public static function getAll()
     {
         // echo "ingetall";
@@ -53,6 +55,7 @@ class Quotation
         require("connection_close.php");
         return $quotationList;
     }
+
     public static function search($key)
     {
         $quotationList = [];
@@ -73,14 +76,16 @@ class Quotation
         require("connection_close.php");
         return $quotationList;
     }
-    public static function add($QID, $CID, $EID, $date, $cusAddress, $cusPhone)
+
+    public static function add($CID, $EID, $date, $cusAddress, $cusPhone)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO `quotation` (`Q_ID`, `Q_Date`, `C_ID`, `C_Address`, `C_Phone`,`E_ID`) VALUES ('$QID', '$date', '$CID', '$cusAddress', '$cusPhone','$EID');";
+        $sql = "INSERT INTO `Quotation` (`Q_Date`, `C_ID`, `C_Address`, `C_Phone`,`E_ID`) VALUES ('$date', '$CID', '$cusAddress', '$cusPhone','$EID')";
         $result = $conn->query($sql);
         require("connection_close.php");
-        // return $quotationList;
+        return "add success $result rows";
     }
+
     // public static function update()
     // {
     //     require("connection_connect.php");
