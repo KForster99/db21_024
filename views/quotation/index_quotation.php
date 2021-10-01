@@ -1,12 +1,13 @@
 <table border=1>
-    new quotation<a href="?controller=quotation&action=newQuotation"> click </a><br>
-
+    <br>
+    new quotation <a href="?controller=quotation&action=newQuotation">click</a><br>
     <form method="get" action="">
         <input type="text" name="key">
         <input type="hidden" name="controller" value="quotation" />
         <button type="submit" name="action" value="searchQuotation"> Search </button>
     </form>
-
+    <br>
+    <br>
     <tr>
         <td>ID</td>
         <td>Date</td>
@@ -20,13 +21,14 @@
     <?php foreach ($quotation_list as $quotation) {
         echo "<tr> 
     <td>$quotation->Q_ID</td>
-    <td>$quotation->date</td> 
-    <td>$quotation->cusName</td>
-    <td>$quotation->cusAddress</td>
-    <td>$quotation->cusPhone</td> 
-    <td>$quotation->empName</td> 
-    <td> <a href=?controller=quotationDetail&action=updateFormQuotationDetail&ID=$quotation->Q_ID> update </a> </td>
-    <td>delete</td> </tr>";
+    <td>$quotation->Q_Date</td> 
+    <td>$quotation->C_Name</td>
+    <td>$quotation->C_Address</td>
+    <td>$quotation->C_Phone</td> 
+    <td>$quotation->E_Name</td> 
+    <td> <a href=?controller=quotation&action=updateFormQuotation&ID=$quotation->Q_ID> update </a> </td>
+    <td> <a href=?controller=quotation&action=deleteConfirmQuotation&ID=$quotation->Q_ID> delete </a> </td>
+    </tr>";
     }
     echo "</table>";
     ?>

@@ -4,22 +4,22 @@ class Quotation
     public $Q_ID;
     public $C_ID;
     public $E_ID;
-    public $date;
-    public $cusName;
-    public $cusAddress;
-    public $cusPhone;
-    public $empName;
+    public $Q_Date;
+    public $C_Name;
+    public $C_Address;
+    public $C_Phone;
+    public $E_Name;
 
-    public function __construct($Q_ID, $C_ID, $E_ID, $date, $cusName, $cusAddress, $cusPhone, $empName)
+    public function __construct($Q_ID, $C_ID, $E_ID, $Q_Date, $C_Name, $C_Address, $C_Phone, $E_Name)
     {
         $this->Q_ID = $Q_ID;
         $this->C_ID = $C_ID;
         $this->E_ID = $E_ID;
-        $this->date = $date;
-        $this->cusName = $cusName;
-        $this->cusAddress = $cusAddress;
-        $this->cusPhone = $cusPhone;
-        $this->empName = $empName;
+        $this->Q_Date = $Q_Date;
+        $this->C_Name = $C_Name;
+        $this->C_Address = $C_Address;
+        $this->C_Phone = $C_Phone;
+        $this->E_Name = $E_Name;
     }
 
     public static function get()
@@ -45,12 +45,12 @@ class Quotation
             $Q_ID = $my_row[Q_ID];
             $C_ID = $my_row[C_ID];
             $E_ID = $my_row[E_ID];
-            $date = $my_row[Q_Date];
-            $cusName = $my_row[C_Name];
-            $cusAddress = $my_row[C_Address];
-            $cusPhone = $my_row[C_Phone];
-            $empName = $my_row[E_Name];
-            $quotationList[] = new Quotation($Q_ID, $C_ID, $E_ID, $date, $cusName, $cusAddress, $cusPhone, $empName);
+            $Q_Date = $my_row[Q_Date];
+            $C_Name = $my_row[C_Name];
+            $C_Address = $my_row[C_Address];
+            $C_Phone = $my_row[C_Phone];
+            $E_Name = $my_row[E_Name];
+            $quotationList[] = new Quotation($Q_ID, $C_ID, $E_ID, $Q_Date, $C_Name, $C_Address, $C_Phone, $E_Name);
         }
         require("connection_close.php");
         return $quotationList;
@@ -66,21 +66,21 @@ class Quotation
             $Q_ID = $my_row[Q_ID];
             $C_ID = $my_row[C_ID];
             $E_ID = $my_row[E_ID];
-            $date = $my_row[Q_Date];
-            $cusName = $my_row[C_Name];
-            $cusAddress = $my_row[C_Address];
-            $cusPhone = $my_row[C_Phone];
-            $empName = $my_row[E_Name];
-            $quotationList[] = new Quotation($Q_ID, $C_ID, $E_ID, $date, $cusName, $cusAddress, $cusPhone, $empName);
+            $Q_Date = $my_row[Q_Date];
+            $C_Name = $my_row[C_Name];
+            $C_Address = $my_row[C_Address];
+            $C_Phone = $my_row[C_Phone];
+            $E_Name = $my_row[E_Name];
+            $quotationList[] = new Quotation($Q_ID, $C_ID, $E_ID, $Q_Date, $C_Name, $C_Address, $C_Phone, $E_Name);
         }
         require("connection_close.php");
         return $quotationList;
     }
 
-    public static function add($CID, $EID, $date, $cusAddress, $cusPhone)
+    public static function add($C_ID, $E_ID, $Q_Date, $C_Address, $C_Phone)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO `Quotation` (`Q_Date`, `C_ID`, `C_Address`, `C_Phone`,`E_ID`) VALUES ('$date', '$CID', '$cusAddress', '$cusPhone','$EID')";
+        $sql = "INSERT INTO `Quotation` (`Q_Date`, `C_ID`, `C_Address`, `C_Phone`,`E_ID`) VALUES ('$Q_Date', '$C_ID', '$C_Address', '$C_Phone','$E_ID')";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "add success $result rows";

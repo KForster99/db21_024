@@ -21,36 +21,35 @@ class QuotationController
         require_once("./views/quotation/index_quotation.php");
     }
 
-    public function addQuotationDetail()
+    public function addQuotation()
     {
-        $date = $_GET['date'];
-        $CID = $_GET['cusID'];
-        $cusAddress = $_GET['cusAddress'];
-        $cusPhone = $_GET['cusPhone'];
-        $EID = $_GET['empID'];
+        $Q_Date = $_GET['Q_Date'];
+        $C_ID = $_GET['C_ID'];
+        $C_Address = $_GET['C_Address'];
+        $C_Phone = $_GET['C_Phone'];
+        $E_ID = $_GET['E_ID'];
 
-        Quotation::add($CID, $EID, $date, $cusAddress, $cusPhone);
+        Quotation::add($C_ID, $E_ID, $Q_Date, $C_Address, $C_Phone);
         QuotationController::index();
     }
 
-    public function updateFormQuotationDetail()
-    {
-        $ID = $_GET['ID'];
-        $quotation_list = Quotation::get($ID);
+    // public function updateFormQuotation()
+    // {
+    //     $ID = $_GET['ID'];
+    //     $quotation_list = Quotation::get($ID);
 
-        require_once("./views/quotationDetail/updateFormQuotationDetail.php");
-    }
+    //     require_once("./views/quotationDetail/updateFormQuotationDetail.php");
+    // }
 
-    public function updateQuotationDetail()
-    {
-        $ID = $_GET['ID'];
-
-        $NewQDID = $_GET['QID'] . "_" . $_GET['procID'];
-        $QID = $_GET['QID'];
-        $PCID = $_GET['procID'];
-        $QtyScr = $_GET['QtyScr'];
-        $Unit = $_GET['Unit'];
-        QuotationDetail::update($NewQDID, $QID, $PCID, $QtyScr, $Unit, $ID);
-        QuotationDetailController::index();
-    }
+    // public function updateQuotation()
+    // {
+    //     $ID = $_GET['ID'];
+    //     $NewQDID = $_GET['QID'] . "_" . $_GET['procID'];
+    //     $QID = $_GET['QID'];
+    //     $PCID = $_GET['procID'];
+    //     $QtyScr = $_GET['QtyScr'];
+    //     $Unit = $_GET['Unit'];
+    //     Quotation::update($NewQDID, $QID, $PCID, $QtyScr, $Unit, $ID);
+    //     QuotationController::index();
+    // }
 }
