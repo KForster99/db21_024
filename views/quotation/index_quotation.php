@@ -26,7 +26,7 @@
     <td>$quotation->C_Address</td>
     <td>$quotation->C_Phone</td> 
     <td>$quotation->E_Name</td> 
-    <td> <a href=?controller=quotation&action=updateFormQuotation&ID=$quotation->Q_ID> update </a> </td>
+    <td> <a href=?controller=quotation&action=updateFromQuotation&ID=$quotation->Q_ID> update </a> </td>
     <td> <a href=?controller=quotation&action=deleteConfirmQuotation&ID=$quotation->Q_ID> delete </a> </td>
     </tr>";
     }

@@ -10,6 +10,8 @@ class QuotationController
     public function newQuotation()
     {
         $quotation_list = Quotation::getAll();
+        // $customer_list = Customer::getAll();
+        // $employee_list = Employee::getAll();
         require_once("./views/quotation/newQuotation.php");
     }
 
@@ -23,33 +25,49 @@ class QuotationController
 
     public function addQuotation()
     {
+        $Q_ID = $_GET['Q_ID'];
         $Q_Date = $_GET['Q_Date'];
         $C_ID = $_GET['C_ID'];
         $C_Address = $_GET['C_Address'];
         $C_Phone = $_GET['C_Phone'];
         $E_ID = $_GET['E_ID'];
 
-        Quotation::add($C_ID, $E_ID, $Q_Date, $C_Address, $C_Phone);
+        Quotation::add($Q_ID, $C_ID, $E_ID, $Q_Date, $C_Address, $C_Phone);
         QuotationController::index();
     }
 
-    // public function updateFormQuotation()
-    // {
-    //     $ID = $_GET['ID'];
-    //     $quotation_list = Quotation::get($ID);
+    public function updateFromQuotation()
+    {
+        $Q_ID = $_GET['Q_ID'];
+        $quotation_list = Quotation::getAll();
+        require_once("./views/productRate/updateFromQuotation.php");
+    }
 
-    //     require_once("./views/quotationDetail/updateFormQuotationDetail.php");
-    // }
+    public function updateQuotation()
+    {
+        $Q_ID = $_GET['Q_ID'];
+        $Q_Date = $_GET['Q_Date'];
+        $C_ID = $_GET['C_ID'];
+        $C_Address = $_GET['C_Address'];
+        $C_Phone = $_GET['C_Phone'];
+        $E_ID = $_GET['E_ID'];
 
-    // public function updateQuotation()
-    // {
-    //     $ID = $_GET['ID'];
-    //     $NewQDID = $_GET['QID'] . "_" . $_GET['procID'];
-    //     $QID = $_GET['QID'];
-    //     $PCID = $_GET['procID'];
-    //     $QtyScr = $_GET['QtyScr'];
-    //     $Unit = $_GET['Unit'];
-    //     Quotation::update($NewQDID, $QID, $PCID, $QtyScr, $Unit, $ID);
-    //     QuotationController::index();
-    // }
+        Quotation::update($Q_ID, $Q_Date, $C_ID, $C_Address, $C_Phone, $E_ID);
+        QuotationController::index();
+    }
+
+    public function deleteConfirmQuotation()
+    {
+        $Q_ID = $_GET['Q_ID'];
+        $quotation_list = Quotation::get($Q_ID);
+        require_once("./views/productRate/deleteConfirmQuotation.php");
+    }
+
+    public function deleteQuotation()
+    {
+        $Q_ID = $_GET['Q_ID'];
+
+        Quotation::delete($Q_ID);
+        QuotationController::index();
+    }
 }

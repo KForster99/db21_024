@@ -1,6 +1,6 @@
 <?php
 $controllers = array('pages'=>['home','error'],
-                    'quotation'=>['index','newQuotation','searchQuotation','addQuotation','updateFormQuotation', 'updateQuotation','deleteConfirmQuotation', 'deleteQuotation'],
+                    'quotation'=>['index','newQuotation','searchQuotation','addQuotation','updateFromQuotation', 'updateQuotation','deleteConfirmQuotation', 'deleteQuotation'],
                     'quotationDetail'=>['index','newQuotationDetail','addQuotationDetail','searchQuotationDetail', 'updateFormQuotationDetail', 'updateQuotationDetail'],
                     'productRate'=>['index', 'newProductRate', 'addProductRate', 'search', 'updateForm', 'update', 'deleteConfirm', 'delete']);
 
@@ -11,6 +11,8 @@ function call($controller,$action){
                       break;
         
         case "quotation" : require_once("./models/quotationModel.php");
+                           require_once("./models/customerModel.php");
+                           require_once("./models/employeeModel.php");
                            $controller = new QuotationController();
                            break;
 

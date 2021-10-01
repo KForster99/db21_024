@@ -22,15 +22,22 @@ class Quotation
         $this->E_Name = $E_Name;
     }
 
-    public static function get()
+    public static function get($Q_ID)
     {
         require("connection_connect.php");
-        $sql = "";
+        $sql = "SELECT * FROM quotation,employee,customer WHERE quotation.E_Sale = employee.E_ID AND quotation.C_ID = customer.C_ID";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
-
+        $Q_ID = $my_row[Q_ID];
+        $C_ID = $my_row[C_ID];
+        $E_ID = $my_row[E_ID];
+        $Q_Date = $my_row[Q_Date];
+        $C_Name = $my_row[C_Name];
+        $C_Address = $my_row[C_Address];
+        $C_Phone = $my_row[C_Phone];
+        $E_Name = $my_row[E_Name];
         require("connection_close.php");
-        return ;
+        return new Quotation($Q_ID, $C_ID, $E_ID, $Q_Date, $C_Name, $C_Address, $C_Phone, $E_Name);
     }
 
     public static function getAll()
@@ -77,29 +84,30 @@ class Quotation
         return $quotationList;
     }
 
-    public static function add($C_ID, $E_ID, $Q_Date, $C_Address, $C_Phone)
+    public static function add($Q_ID, $C_ID, $E_ID, $Q_Date, $C_Address, $C_Phone)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO `Quotation` (`Q_Date`, `C_ID`, `C_Address`, `C_Phone`,`E_ID`) VALUES ('$Q_Date', '$C_ID', '$C_Address', '$C_Phone','$E_ID')";
+        $sql = "INSERT INTO `Quotation` (`Q_ID`,`Q_Date`, `C_ID`, `C_Address`, `C_Phone`,`E_ID`) VALUES ('$Q_ID','$Q_Date', '$C_ID', '$C_Address', '$C_Phone','$E_ID')";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "add success $result rows";
     }
 
-    // public static function update()
-    // {
-    //     require("connection_connect.php");
-    //     $sql = "";
-    //     $result = $conn->query($sql);
-    //     require("connection_close.php");
-    //     return quotationList;
-    // }
-    // public static function delete()
-    // {
-    //     require_once("connection_connect.php");
-    //     $sql = "";
-    //     $result = $conn->query($sql);
-    //     require("connection_close.php");
-    //     return ;
-    // }
+    public static function update($Q_ID, $C_ID, $E_ID, $Q_Date, $C_Address, $C_Phone)
+    {
+        require("connection_connect.php");
+        $sql = "UPDATE quotation SET Q_ID = '$Q_ID', C_ID = '$C_ID', E_ID = '$E_ID', Q_Date = '$Q_Date', C_Address = '$C_Address', C_Phone = '$C_Phone' WHERE quotation.Q_ID = '$Q_ID'";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        return "update success $result rows";
+    }
+
+    public static function delete($Q_ID)
+    {
+        require("connection_connect.php");
+        $sql = "DELETE FROM quotation WHERE quotation.Q_ID = '$Q_ID'";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+        return "delete success $result rows";
+    }
 }

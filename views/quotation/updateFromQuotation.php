@@ -1,34 +1,35 @@
 <form method="get" action="">
     <label>เลขใบเสนอราคา&nbsp;&nbsp;&nbsp;&nbsp;
-        <select name="QID">
+        <input type="text" name="Q_ID" value="<?php echo $quotation->Q_ID; ?>" /></label><br>
+    <label>วันที่&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="date" name="Q_Date" value="<?php echo $quotation->Q_Date; ?>" /></label><br>
+    <label>ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="C_ID">
             <?php
             foreach ($quotation_list as $quotation) {
-                echo "<option value = $quotation->Q_ID";
-                if ($quotation->Q_ID == $quotation->Qid) {
+                echo "<option value=$quotation->C_ID";
+                if ($quotation->C_ID == $customer->C_ID) {
                     echo " selected='selected'";
                 }
-                echo ">$quotation->Q_ID</option>";
-            } ?></select></label><br>
-    <label>วันที่&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="date" name="date" /></label><br>
-    <label>ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <select name="cusID">
-            <?php
-            foreach ($quotation_list as $quotation) {
-                echo "<option value=$quotation->C_ID>$quotation->cusName</option>";
+                echo ">$quotation->C_Name</option>";
             } ?> </select></label><br>
     <label>ที่อยู่ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" name="cusAddress" /></label><br>
+        <input type="text" name="C_Address" value="<?php echo $customer->C_Address; ?>" /></label><br>
     <label>เบอร์โทรศัพท์&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" name="cusPhone" /></label><br>
+        <input type="text" name="C_Phone" value="<?php echo $customer->C_Phone; ?>" /></label><br>
     <label>พนักงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <select name="empID">
+        <select name="E_ID">
             <?php
             foreach ($quotation_list as $quotation) {
-                echo "<option value=$quotation->E_ID>$quotation->empName</option>";
+                echo "<option value=$quotation->E_ID";
+                if ($quotation->E_Sale == $employee->E_ID) {
+                    echo " selected='selected'";
+                }
+                echo ">$quotation->E_Name</option>";
             } ?></select></label><br>
 
     <input type="hidden" name="controller" value="quotation" />
+    <input type="hidden" name="Q_ID" value="<?php echo $quotation->Q_ID; ?>" />
     <button type="submit" name="action" value="index"> Back</button>
-    <button type="submit" name="action" value="addQuotation"> Save</button>
+    <button type="submit" name="action" value="updateQuotation"> Save</button>
 </form>

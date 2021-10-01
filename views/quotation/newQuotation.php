@@ -1,6 +1,6 @@
 <br>
 <form method="get" action="">
-    <label>เลขใบเสนอราคา&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Q_ID" /></label><br>
+    <label>เลขใบเสนอราคา&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Q_ID" /></label><br>
     <label>วันที่&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="date" name="Q_Date" /></label><br>
     <label>ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -18,7 +18,7 @@
             <?php
             foreach ($quotation_list as $quotation) {
                 echo "<option value=$quotation->E_ID>$quotation->E_Name</option>";
-            } ?></select></label><br>
+            } ?></select></label><br><br>
 
     <input type="hidden" name="controller" value="quotation" />
     <button type="submit" name="action" value="index"> Back</button>
