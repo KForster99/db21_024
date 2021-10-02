@@ -27,7 +27,7 @@ class ProductColor
 
     public static function getAll()
     {
-        echo "getAll";
+        //echo "getAll";
         $productList = [];
         require("connection_connect.php");
         $sql = "select * from product,product_color WHERE product.P_ID = product_color.P_ID";
