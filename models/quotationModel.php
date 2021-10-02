@@ -84,10 +84,10 @@ class Quotation
         return $quotationList;
     }
 
-    public static function add($Q_ID, $C_ID, $E_Sale, $Q_Date,)
+    public static function add($Q_ID, $C_ID, $E_ID, $Q_Date, $C_Address, $C_Phone)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO `quotation` (`Q_ID`,`Q_Date`,`E_Sale`,`C_ID`) VALUES ('$Q_ID','$Q_Date','$E_Sale','$C_ID',)";
+        $sql = "INSERT INTO `Quotation` (`Q_ID`,`Q_Date`, `C_ID`, `C_Address`, `C_Phone`,`E_ID`) VALUES ('$Q_ID','$Q_Date', '$C_ID', '$C_Address', '$C_Phone','$E_ID')";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "add success $result rows";
