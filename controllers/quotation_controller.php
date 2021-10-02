@@ -57,14 +57,15 @@ class QuotationController
     public function deleteConfirmQuotation()
     {
         $Q_ID = $_GET['Q_ID'];
-        $quotation_list = Quotation::get($Q_ID);
+        $quotation = Quotation::get($Q_ID);
+        echo "<br>1<br>";
         require_once("./views/quotation/deleteConfirmQuotation.php");
     }
 
     public function deleteQuotation()
     {
         $Q_ID = $_GET['Q_ID'];
-
+        
         Quotation::delete($Q_ID);
         QuotationController::index();
     }
