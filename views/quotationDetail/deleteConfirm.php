@@ -6,6 +6,6 @@
 <input type="hidden" name="controller" value="quotationDetail"/>
 <input type="hidden" name="ID" value="<?php echo $quotationDetail->QDid; ?>"/>
 <button type="submit" name="action" value="index"> Back</button>
-<button type="submit" name="action" value="delete"> Save</button>
+<button type="submit" name="action" value="deleteQuotationDetail"> Delete</button>
 
 </form>

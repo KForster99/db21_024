@@ -59,16 +59,13 @@
         public function deleteConfirmQuotationDetail(){
             $ID = $_GET['ID'];
             $quotationDetail = QuotationDetail::get($ID);
-
             require_once("./views/quotationDetail/deleteConfirm.php");
         }
 
-        public function delete(){
+        public function deleteQuotationDetail(){
             $ID = $_GET['ID'];
-
-            ProductRate::delete($ID);
-
-            ProductRateController::index();
+            QuotationDetail::delete($ID);
+            QuotationDetailController::index();
         }
 
     }
