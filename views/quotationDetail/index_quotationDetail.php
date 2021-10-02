@@ -29,6 +29,7 @@ Search</button>
     <td>$quotationDetail->UnitPrice</td> 
     <td>$quotationDetail->Total</td> 
     <td> <a href=?controller=quotationDetail&action=updateFormQuotationDetail&ID=$quotationDetail->QDid> update </a> </td>
-    <td>delete</td> </tr>"; }
+    <td> <a href=?controller=productRate&action=deleteConfirm&ID=$productRate->ID> delete </a> </td>"; 
+}
 echo "</table>";
 ?>
