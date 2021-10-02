@@ -6,8 +6,8 @@
     <label>ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select name="C_ID">
             <?php
-            foreach ($quotation_list as $quotation) {
-                echo "<option value=$quotation->C_ID>$quotation->C_Name</option>";
+            foreach ($customer_list as $customer) {
+                echo "<option value=$customer->C_ID>$customer->C_Name</option>";
             } ?> </select></label><br>
     <label>ที่อยู่ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" name="C_Address" /></label><br>
@@ -16,8 +16,8 @@
     <label>พนักงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select name="E_ID">
             <?php
-            foreach ($quotation_list as $quotation) {
-                echo "<option value=$quotation->E_ID>$quotation->E_Name</option>";
+            foreach ($employee_list as $employee) {
+                echo "<option value=$employee->E_ID>$employee->E_Name</option>";
             } ?></select></label><br><br>
 
     <input type="hidden" name="controller" value="quotation" />

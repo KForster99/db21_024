@@ -10,8 +10,8 @@ class QuotationController
     public function newQuotation()
     {
         $quotation_list = Quotation::getAll();
-        // $customer_list = Customer::getAll();
-        // $employee_list = Employee::getAll();
+        $customer_list = Customer::getAll();
+        $employee_list = Employee::getAll();
         require_once("./views/quotation/newQuotation.php");
     }
 
