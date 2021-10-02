@@ -1,5 +1,5 @@
 <?php echo "<br> Are you sure to delete this quotationDetail <br>
-            <br> $quotationDetail->Qid $quotationDetail->Pname สี$quotationDetail->Pcolor จำนวน:$quotationDetail->Unit จำนวนที่Screen: $quotationDetail->QDScr <br>";?>
+            <br> QID:$quotationDetail->Qid <br>$quotationDetail->Pname สี$quotationDetail->Pcolor <br>จำนวน:$quotationDetail->Unit <br>จำนวนที่Screen: $quotationDetail->QDScr <br>";?>
 
 <form method="get" action="">
 

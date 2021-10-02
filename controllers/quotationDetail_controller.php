@@ -56,7 +56,7 @@
             QuotationDetailController::index();
         }
 
-        public function deleteConfirm(){
+        public function deleteConfirmQuotationDetail(){
             $ID = $_GET['ID'];
             $quotationDetail = QuotationDetail::get($ID);
 
