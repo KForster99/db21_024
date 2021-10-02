@@ -73,7 +73,7 @@ class QuotationDetail
     {
         $quotationDetailList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM quotationDetail, quotation_detail, product_color, product WHERE quotationDetail.QD_ID = quotation_detail.QD_ID AND product_color.PC_ID = quotation_detail.PC_ID AND product.P_ID = product_color.P_ID AND (product.P_ID LIKE '%$key%' OR product.P_Name LIKE '%$key%' OR quotation_detail.Q_ID LIKE '%$key%')";
+        $sql = "SELECT * FROM quotationDetail, quotation_detail, product_color, product WHERE quotationDetail.QD_ID = quotation_detail.QD_ID AND product_color.PC_ID = quotation_detail.PC_ID AND product.P_ID = product_color.P_ID AND (product.P_ID LIKE '%$key%' OR product.P_Name LIKE '%$key%' OR quotation_detail.Q_ID LIKE '%$key%' OR product_color.PC_Color LIKE '%$key%')";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
             $QDid = $my_row[QD_ID];
