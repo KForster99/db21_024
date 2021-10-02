@@ -28,11 +28,11 @@ class QuotationController
         $Q_ID = $_GET['Q_ID'];
         $Q_Date = $_GET['Q_Date'];
         $C_ID = $_GET['C_ID'];
-        $C_Address = $_GET['C_Address'];
-        $C_Phone = $_GET['C_Phone'];
+        // $C_Address = $_GET['C_Address'];
+        // $C_Phone = $_GET['C_Phone'];
         $E_ID = $_GET['E_ID'];
 
-        Quotation::add($Q_ID, $C_ID, $E_ID, $Q_Date, $C_Address, $C_Phone);
+        Quotation::add($Q_ID, $C_ID, $E_ID, $Q_Date);
         QuotationController::index();
     }
 

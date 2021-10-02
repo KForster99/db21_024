@@ -45,7 +45,7 @@ class Quotation
         // echo "ingetall";
         $quotationList = [];
         require("connection_connect.php");
-        $sql = "SELECT * FROM quotation,employee,customer WHERE quotation.E_Sale = employee.E_ID AND quotation.C_ID = customer.C_ID";
+        $sql = "SELECT * FROM quotation,employee,customer WHERE quotation.E_Sale = employee.E_ID AND quotation.C_ID = customer.C_ID ORDER BY quotation.Q_ID";
         $result = $conn->query($sql);
         // echo $sql;
         while ($my_row = $result->fetch_assoc()) {
@@ -84,10 +84,10 @@ class Quotation
         return $quotationList;
     }
 
-    public static function add($Q_ID, $C_ID, $E_ID, $Q_Date, $C_Address, $C_Phone)
+    public static function add($Q_ID, $C_ID, $E_ID, $Q_Date)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO `Quotation` (`Q_ID`,`Q_Date`, `C_ID`, `C_Address`, `C_Phone`,`E_ID`) VALUES ('$Q_ID','$Q_Date', '$C_ID', '$C_Address', '$C_Phone','$E_ID')";
+        $sql = "INSERT INTO `quotation` (`Q_ID`,`Q_Date`,`E_Sale`,`C_ID`, `Q_DepositPercent`, `Q_ CreditPeriod`, `E_MApproval`, `Q_MApprovalDate`, `Q_ApprovalPercentMore`, `Q_ManufactureDoneDate`, `Q_DeliveryStatus`) VALUES ('$Q_ID', '$Q_Date', '$E_ID', '$C_ID', '0', NULL, NULL, NULL, NULL, NULL, NULL)";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "add success $result rows";
