@@ -3,7 +3,7 @@
     <label>เลขใบเสนอราคา&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" name="Q_ID" value="<?php echo $quotation->Q_ID; ?>" /></label><br>
     <label>วันที่&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" name="Q_Name" value="<?php echo $quotation->Q_Date; ?>" /></label><br>
+        <input type="date" name="Q_Date" value="<?php echo $quotation->Q_Date; ?>" /></label><br>
     <label>ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select name="C_ID">
             <?php
