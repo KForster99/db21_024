@@ -36,11 +36,13 @@ class QuotationController
         QuotationController::index();
     }
 
-    public function updateFromQuotation()
+    public function updateFormQuotation()
     {
         $Q_ID = $_GET['Q_ID'];
-        $quotation_list = Quotation::getAll();
-        require_once("./views/quotation/updateFromQuotation.php");
+        $quotation = Quotation::get($Q_ID);
+        $customer_list = Customer::getAll();
+        $employee_list = Employee::getAll();
+        require_once("./views/quotation/updateFormQuotation.php");
     }
 
     public function updateQuotation()
