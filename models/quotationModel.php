@@ -25,7 +25,7 @@ class Quotation
     public static function get($Q_ID)
     {
         require("connection_connect.php");
-        $sql = "SELECT * FROM quotation,employee,customer WHERE quotation.E_Sale = employee.E_ID AND quotation.C_ID = customer.C_ID";
+        $sql = "SELECT * FROM quotation,employee,customer WHERE quotation.E_Sale = employee.E_ID AND quotation.C_ID = customer.C_ID AND quotation.Q_ID = '$Q_ID'";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $Q_ID = $my_row[Q_ID];
@@ -90,16 +90,16 @@ class Quotation
         $sql = "INSERT INTO `quotation` (`Q_ID`,`Q_Date`,`E_Sale`,`C_ID`, `Q_DepositPercent`, `Q_ CreditPeriod`, `E_MApproval`, `Q_MApprovalDate`, `Q_ApprovalPercentMore`, `Q_ManufactureDoneDate`, `Q_DeliveryStatus`) VALUES ('$Q_ID', '$Q_Date', '$E_ID', '$C_ID', '0', NULL, NULL, NULL, NULL, NULL, NULL)";
         $result = $conn->query($sql);
         require("connection_close.php");
-        return "add success $result rows";
     }
 
-    public static function update($Q_ID, $C_ID, $E_ID, $Q_Date, $C_Address, $C_Phone)
+    public static function update($Q_ID, $Q_Date, $C_ID, $E_ID)
     {
         require("connection_connect.php");
-        $sql = "UPDATE quotation SET Q_ID = '$Q_ID', C_ID = '$C_ID', E_ID = '$E_ID', Q_Date = '$Q_Date', C_Address = '$C_Address', C_Phone = '$C_Phone' WHERE quotation.Q_ID = '$Q_ID'";
+        
+        $sql = "UPDATE quotation SET Q_Date = '$Q_Date', E_Sale = '$E_ID',C_ID = '$C_ID'  WHERE quotation.Q_ID = '$Q_ID'";
+        //  `Q_DepositPercent`, `Q_ CreditPeriod`, `E_MApproval`, `Q_MApprovalDate`, `Q_ApprovalPercentMore`, `Q_ManufactureDoneDate`, `Q_DeliveryStatus`) VALUES ('$Q_ID', '$Q_Date', '$E_ID', '$C_ID', '0', NULL, NULL, NULL, NULL, NULL, NULL)";
         $result = $conn->query($sql);
         require("connection_close.php");
-        return "update success $result rows";
     }
 
     public static function delete($Q_ID)
@@ -108,6 +108,5 @@ class Quotation
         $sql = "DELETE FROM quotation WHERE quotation.Q_ID = '$Q_ID'";
         $result = $conn->query($sql);
         require("connection_close.php");
-        return "delete success $result rows";
     }
 }
