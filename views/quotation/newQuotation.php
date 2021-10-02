@@ -9,10 +9,6 @@
             foreach ($customer_list as $customer) {
                 echo "<option value=$customer->C_ID>$customer->C_Name</option>";
             } ?> </select></label><br>
-    <label>ที่อยู่ลูกค้า&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" name="C_Address" /></label><br>
-    <label>เบอร์โทรศัพท์&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" name="C_Phone" /></label><br>
     <label>พนักงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select name="E_ID">
             <?php
