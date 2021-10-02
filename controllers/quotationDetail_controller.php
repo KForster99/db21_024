@@ -56,6 +56,20 @@
             QuotationDetailController::index();
         }
 
+        public function deleteConfirm(){
+            $ID = $_GET['ID'];
+            $quotationDetail = QuotationDetail::get($ID);
+
+            require_once("./views/quotationDetail/deleteConfirm.php");
+        }
+
+        public function delete(){
+            $ID = $_GET['ID'];
+
+            ProductRate::delete($ID);
+
+            ProductRateController::index();
+        }
 
     }
 ?>
